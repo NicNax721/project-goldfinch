@@ -1,0 +1,10 @@
+BasedOnStyle: Google
+Standard: c++17
+ColumnLimit: 100    
+IndentWidth: 2
+AccessModifierOffset: -1
+PointerAlignment: Left      # QWidget* parent instead of QWidget *parent
+DerivePointerAlignment: false
+AllowShortFunctionsOnASingleLine: Inline
+SortIncludes: true
+IncludeBlocks: Preserve

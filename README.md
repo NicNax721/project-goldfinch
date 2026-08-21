@@ -1,4 +1,4 @@
-# 🐦 Project-Goldfinch
+# 🐦 Project Goldfinch
 
 > This software is made and distributed only to specific LGUs.
 

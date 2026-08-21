@@ -1,0 +1,14 @@
+// Recommended extensions for this project.
+{
+    "recommendations": [
+        "theqtcompany.qt-cpp-pack",
+        "ms-vscode.cmake-tools",
+        "twxs.cmake",
+        "ms-vscode.cpptools",
+        "llvm-vs-code-extensions.vscode-clangd"
+    ],
+    "unwantedRecommendations": [
+        "xaver.clang-format",
+        "ms-vscode.cpptools-extension-pack"
+    ]
+}

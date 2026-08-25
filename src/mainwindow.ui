@@ -2,322 +2,919 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry"><rect><x>0</x><y>0</y><width>1248</width><height>702</height></rect></property>
-  <property name="minimumSize"><size><width>1100</width><height>640</height></size></property>
-  <property name="windowTitle"><string>Baybay City Gov HR System</string></property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1248</width>
+    <height>702</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1100</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Baybay City Gov HR System</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-
-   <!-- ROOT: horizontal( sidebar , main ) -->
    <layout class="QHBoxLayout" name="rootLayout">
-    <property name="spacing"><number>0</number></property>
-    <property name="leftMargin"><number>0</number></property>
-    <property name="topMargin"><number>0</number></property>
-    <property name="rightMargin"><number>0</number></property>
-    <property name="bottomMargin"><number>0</number></property>
-
-    <!-- ============ SIDEBAR: vertical( logo, nav buttons ) ============ -->
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QFrame" name="sidebarFrame">
-      <property name="minimumSize"><size><width>222</width><height>0</height></size></property>
-      <property name="maximumSize"><size><width>222</width><height>16777215</height></size></property>
+      <property name="minimumSize">
+       <size>
+        <width>222</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>222</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <layout class="QVBoxLayout" name="sidebarLayout">
-       <property name="spacing"><number>2</number></property>
-       <property name="leftMargin"><number>0</number></property>
-       <property name="topMargin"><number>12</number></property>
-       <property name="rightMargin"><number>0</number></property>
-       <property name="bottomMargin"><number>12</number></property>
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>12</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>12</number>
+       </property>
        <item>
         <widget class="QLabel" name="lblLogo">
-         <property name="minimumSize"><size><width>0</width><height>140</height></size></property>
-         <property name="alignment"><set>Qt::AlignCenter</set></property>
-         <!-- The Baybay City seal. This is the 96x96 copy on purpose: the label has no scaledContents, so it draws
-              whatever pixmap it is given at full size, and the 512x512 original
-              (icons/city_seal_full.png) would push the 222px sidebar wide open.
-              If you ever swap the artwork, resize to 96x96 first and keep the
-              matching icons/city_seal-2x.png at 192x192 for high-DPI screens. -->
-         <property name="pixmap"><pixmap resource="resources.qrc">:/icons/city_seal.png</pixmap></property>
-         <property name="text"><string/></property>
-         <property name="toolTip"><string>Baybay City seal</string></property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>140</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Baybay City seal</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>:/icons/city_seal.png</pixmap>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
         </widget>
        </item>
-       <item><widget class="QPushButton" name="btnNavDtr"><property name="text"><string>Employee Info</string></property><property name="checkable"><bool>true</bool></property><property name="checked"><bool>true</bool></property></widget></item>
-       <item><widget class="QPushButton" name="btnBatchReport"><property name="text"><string>Batch Report</string></property><property name="checkable"><bool>true</bool></property></widget></item>
-       <item><widget class="QPushButton" name="btnAdd"><property name="text"><string>Add New Employee</string></property><property name="checkable"><bool>true</bool></property></widget></item>
-       <item><widget class="QPushButton" name="btnImport"><property name="text"><string>Import Data</string></property></widget></item>
-       <item><widget class="QPushButton" name="btnArchives"><property name="text"><string>Archived Years</string></property><property name="toolTip"><string>Browse and print records from a completed year that has been moved out of the live database.</string></property></widget></item>
-       <item><widget class="QPushButton" name="btnSignatory"><property name="text"><string>Settings</string></property><property name="checkable"><bool>true</bool></property></widget></item>
-       <item><widget class="QPushButton" name="btnManual"><property name="text"><string>User Manual</string></property></widget></item>
-       <item><spacer name="sidebarSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property></spacer></item>
+       <item>
+        <widget class="QPushButton" name="btnNavDtr">
+         <property name="text">
+          <string>Employee Info</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnBatchReport">
+         <property name="text">
+          <string>Batch Report</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnAdd">
+         <property name="text">
+          <string>Add New Employee</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSignatory">
+         <property name="text">
+          <string>Settings</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnImport">
+         <property name="text">
+          <string>Import Data</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnArchives">
+         <property name="toolTip">
+          <string>Browse and print records from a completed year that has been moved out of the live database.</string>
+         </property>
+         <property name="text">
+          <string>Archived Years</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnManual">
+         <property name="text">
+          <string>User Manual</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="sidebarSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
      </widget>
     </item>
-
     <item>
      <widget class="Line" name="sidebarDivider">
-      <property name="orientation"><enum>Qt::Vertical</enum></property>
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
      </widget>
     </item>
-
-    <!-- ============ MAIN: vertical( header , pages ) ============ -->
     <item>
      <widget class="QFrame" name="mainFrame">
       <layout class="QVBoxLayout" name="mainLayout">
-       <property name="spacing"><number>0</number></property>
-       <property name="leftMargin"><number>0</number></property>
-       <property name="topMargin"><number>0</number></property>
-       <property name="rightMargin"><number>0</number></property>
-       <property name="bottomMargin"><number>0</number></property>
-
-       <!-- HEADER: horizontal( title , search , session time ) -->
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QFrame" name="headerFrame">
-         <property name="minimumSize"><size><width>0</width><height>62</height></size></property>
-         <property name="maximumSize"><size><width>16777215</width><height>62</height></size></property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>62</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>62</height>
+          </size>
+         </property>
          <layout class="QHBoxLayout" name="headerLayout">
-          <property name="leftMargin"><number>14</number></property>
-          <property name="rightMargin"><number>18</number></property>
-          <property name="topMargin"><number>9</number></property>
-          <property name="bottomMargin"><number>9</number></property>
+          <property name="leftMargin">
+           <number>14</number>
+          </property>
+          <property name="topMargin">
+           <number>9</number>
+          </property>
+          <property name="rightMargin">
+           <number>18</number>
+          </property>
+          <property name="bottomMargin">
+           <number>9</number>
+          </property>
           <item>
            <widget class="QLabel" name="lblTitle">
-            <property name="text"><string>Baybay City Gov HR System</string></property>
+            <property name="text">
+             <string>Baybay City Gov HR System</string>
+            </property>
            </widget>
           </item>
           <item>
            <widget class="QLineEdit" name="txtSearch">
-            <property name="minimumSize"><size><width>280</width><height>32</height></size></property>
-            <property name="maximumSize"><size><width>360</width><height>32</height></size></property>
-            <property name="placeholderText"><string>Search employee by ID or name...</string></property>
-            <property name="clearButtonEnabled"><bool>true</bool></property>
+            <property name="minimumSize">
+             <size>
+              <width>280</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>360</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>Search employee by ID or name...</string>
+            </property>
+            <property name="clearButtonEnabled">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
-          <item><spacer name="hdrSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+          <item>
+           <spacer name="hdrSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item>
            <widget class="QLabel" name="lblSession">
-            <property name="text"><string>-</string></property>
-            <property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property>
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            </property>
            </widget>
           </item>
          </layout>
         </widget>
        </item>
-
        <item>
         <widget class="Line" name="headerLine">
-         <property name="orientation"><enum>Qt::Horizontal</enum></property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QFrame" name="infoFrame">
-         <property name="minimumSize"><size><width>0</width><height>30</height></size></property>
-         <property name="maximumSize"><size><width>16777215</width><height>30</height></size></property>
-         <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::NoFrame</enum>
+         </property>
          <layout class="QHBoxLayout" name="infoFrameLayout">
-          <property name="leftMargin"><number>14</number></property>
-          <property name="topMargin"><number>2</number></property>
-          <property name="rightMargin"><number>14</number></property>
-          <property name="bottomMargin"><number>2</number></property>
+          <property name="leftMargin">
+           <number>14</number>
+          </property>
+          <property name="topMargin">
+           <number>2</number>
+          </property>
+          <property name="rightMargin">
+           <number>14</number>
+          </property>
+          <property name="bottomMargin">
+           <number>2</number>
+          </property>
           <item>
            <widget class="QLabel" name="lblInfoText">
-            <property name="text"><string>*Demo software for the Human Resource and Management Office of the local government unit of Baybay City</string></property>
+            <property name="text">
+             <string>*Demo software for the Human Resource and Management Office of the local government unit of Baybay City</string>
+            </property>
            </widget>
           </item>
-          <item><spacer name="infoSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
+          <item>
+           <spacer name="infoSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>10</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
          </layout>
         </widget>
        </item>
        <item>
         <widget class="QFrame" name="devBanner">
-         <property name="visible"><bool>false</bool></property>
-         <property name="minimumSize"><size><width>0</width><height>18</height></size></property>
-         <property name="maximumSize"><size><width>16777215</width><height>18</height></size></property>
-         <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
-         <!-- No font-size is set anywhere here, so the label inherits exactly
-              the same size as the "*Demo software..." line above it. -->
-         <property name="styleSheet"><string>QFrame#devBanner { background: #b31942; }
-QLabel#lblDevBanner { color: #ffffff; font-weight: bold; letter-spacing: 1px; }</string></property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="visible">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string>QFrame#devBanner { background: #b31942; }
+QLabel#lblDevBanner { color: #ffffff; font-weight: bold; letter-spacing: 1px; }</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::NoFrame</enum>
+         </property>
          <layout class="QHBoxLayout" name="devBannerLayout">
-          <property name="leftMargin"><number>14</number></property>
-          <property name="topMargin"><number>0</number></property>
-          <property name="rightMargin"><number>14</number></property>
-          <property name="bottomMargin"><number>0</number></property>
-          <property name="spacing"><number>0</number></property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>14</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>14</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <widget class="QLabel" name="lblDevBanner">
-            <property name="text"><string>DEVELOPER MODE ON</string></property>
+            <property name="text">
+             <string>DEVELOPER MODE ON</string>
+            </property>
            </widget>
           </item>
-          <item><spacer name="devBannerSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
+          <item>
+           <spacer name="devBannerSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>10</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
          </layout>
         </widget>
        </item>
-       <!-- PAGES -->
        <item>
         <widget class="QStackedWidget" name="stackPages">
-         <property name="currentIndex"><number>0</number></property>
-
-         <!-- ===== PAGE: EMPLOYEE INFO ===== -->
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
          <widget class="QWidget" name="pageDtr">
           <layout class="QVBoxLayout" name="pageDtrLayout">
-           <property name="leftMargin"><number>14</number></property>
-           <property name="topMargin"><number>12</number></property>
-           <property name="rightMargin"><number>14</number></property>
-           <property name="bottomMargin"><number>12</number></property>
+           <property name="leftMargin">
+            <number>14</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>14</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
            <item>
             <widget class="QLabel" name="lblEmptyState">
-             <property name="alignment"><set>Qt::AlignCenter</set></property>
-             <property name="wordWrap"><bool>true</bool></property>
-             <property name="text"><string>No employee selected
+             <property name="text">
+              <string>No employee selected
 
 Type an ID or name in the search box above,
-then click a suggestion to view their Daily Time Record.</string></property>
+then click a suggestion to view their Daily Time Record.</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
-
-           <!-- Employee Info group -->
            <item>
             <widget class="QGroupBox" name="grpDetails">
-             <property name="title"><string>Employee Info</string></property>
-             <property name="maximumSize"><size><width>16777215</width><height>282</height></size></property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>282</height>
+              </size>
+             </property>
+             <property name="title">
+              <string>Employee Info</string>
+             </property>
              <layout class="QHBoxLayout" name="detailsOuter">
               <item>
-               <!-- Square, because a 2x2 ID photo is square. A portrait box
-                    such as 108x128 letterboxes every photo. -->
                <widget class="QLabel" name="lblPhoto">
-                <property name="minimumSize"><size><width>128</width><height>128</height></size></property>
-                <property name="maximumSize"><size><width>128</width><height>128</height></size></property>
-                <property name="alignment"><set>Qt::AlignCenter</set></property>
-                <property name="text"><string>No
-Photo</string></property>
-                <property name="frameShape"><enum>QFrame::StyledPanel</enum></property>
+                <property name="minimumSize">
+                 <size>
+                  <width>128</width>
+                  <height>128</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>128</width>
+                  <height>128</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::StyledPanel</enum>
+                </property>
+                <property name="text">
+                 <string>No
+Photo</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
                </widget>
               </item>
               <item>
                <layout class="QGridLayout" name="gridDetails" columnstretch="0,1">
-                <property name="horizontalSpacing"><number>10</number></property>
-                <property name="verticalSpacing"><number>4</number></property>
-                <item row="0" column="0"><widget class="QLabel" name="capId"><property name="text"><string>ID :</string></property><property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property></widget></item>
-                <item row="0" column="1"><widget class="QLabel" name="valId"><property name="text"><string>-</string></property></widget></item>
-                <item row="1" column="0"><widget class="QLabel" name="capName"><property name="text"><string>Name :</string></property><property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property></widget></item>
-                <item row="1" column="1"><widget class="QLabel" name="valName"><property name="text"><string>-</string></property><property name="font"><font><bold>true</bold></font></property></widget></item>
-                <item row="2" column="0"><widget class="QLabel" name="capBirth"><property name="text"><string>Birth Date :</string></property><property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property></widget></item>
-                <item row="2" column="1"><widget class="QLabel" name="valBirth"><property name="text"><string>-</string></property></widget></item>
-                <item row="3" column="0"><widget class="QLabel" name="capAge"><property name="text"><string>Age :</string></property><property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property></widget></item>
-                <item row="3" column="1"><widget class="QLabel" name="valAge"><property name="text"><string>-</string></property></widget></item>
-                <item row="4" column="0"><widget class="QLabel" name="capGender"><property name="text"><string>Gender :</string></property><property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property></widget></item>
-                <item row="4" column="1"><widget class="QLabel" name="valGender"><property name="text"><string>-</string></property></widget></item>
-                <item row="5" column="0"><widget class="QLabel" name="capDept"><property name="text"><string>Department :</string></property><property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property></widget></item>
-                <item row="5" column="1"><widget class="QLabel" name="valDept"><property name="text"><string>-</string></property></widget></item>
-                <item row="6" column="0"><widget class="QLabel" name="capJob"><property name="text"><string>Job Category :</string></property><property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property></widget></item>
-                <item row="6" column="1"><widget class="QLabel" name="valJob"><property name="text"><string>-</string></property></widget></item>
-                <item row="7" column="0"><widget class="QLabel" name="capWorkMode"><property name="text"><string>Work Schedule :</string></property><property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property></widget></item>
-                <item row="7" column="1"><widget class="QLabel" name="valWorkMode"><property name="text"><string>-</string></property></widget></item>
-                <item row="8" column="0" colspan="2"><widget class="QPushButton" name="btnEdit"><property name="enabled"><bool>false</bool></property><property name="minimumSize"><size><width>0</width><height>26</height></size></property><property name="text"><string>Edit Information...</string></property></widget></item>
+                <property name="horizontalSpacing">
+                 <number>10</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>4</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="capId">
+                  <property name="text">
+                   <string>ID :</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="valId">
+                  <property name="text">
+                   <string>-</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="capName">
+                  <property name="text">
+                   <string>Name :</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="valName">
+                  <property name="font">
+                   <font>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>-</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="capBirth">
+                  <property name="text">
+                   <string>Birth Date :</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLabel" name="valBirth">
+                  <property name="text">
+                   <string>-</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="capAge">
+                  <property name="text">
+                   <string>Age :</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLabel" name="valAge">
+                  <property name="text">
+                   <string>-</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="capGender">
+                  <property name="text">
+                   <string>Gender :</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLabel" name="valGender">
+                  <property name="text">
+                   <string>-</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QLabel" name="capDept">
+                  <property name="text">
+                   <string>Department :</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QLabel" name="valDept">
+                  <property name="text">
+                   <string>-</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QLabel" name="capJob">
+                  <property name="text">
+                   <string>Job Category :</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QLabel" name="valJob">
+                  <property name="text">
+                   <string>-</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QLabel" name="capWorkMode">
+                  <property name="text">
+                   <string>Work Schedule :</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QLabel" name="valWorkMode">
+                  <property name="text">
+                   <string>-</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0" colspan="2">
+                 <widget class="QPushButton" name="btnEdit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>26</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Edit Information...</string>
+                  </property>
+                 </widget>
+                </item>
                </layout>
               </item>
              </layout>
             </widget>
            </item>
-
-           <!-- Report Period ABOVE the table, both in the DTR group -->
            <item>
             <widget class="QGroupBox" name="grpReport">
-             <property name="title"><string>Daily Time Record</string></property>
+             <property name="title">
+              <string>Daily Time Record</string>
+             </property>
              <layout class="QVBoxLayout" name="reportLayout">
-
               <item>
                <layout class="QHBoxLayout" name="periodRow">
-                <property name="spacing"><number>10</number></property>
-                <item><widget class="QLabel" name="lblPeriodCap"><property name="text"><string>Report Period:</string></property></widget></item>
-                <item><widget class="QLabel" name="lblMonth"><property name="text"><string>Month:</string></property></widget></item>
-                <item><widget class="QComboBox" name="cboMonth"><property name="minimumSize"><size><width>122</width><height>28</height></size></property></widget></item>
-                <item><widget class="QLabel" name="lblYear"><property name="text"><string>Year:</string></property></widget></item>
-                <item><widget class="QSpinBox" name="spinYear"><property name="minimumSize"><size><width>82</width><height>28</height></size></property><property name="minimum"><number>2000</number></property><property name="maximum"><number>2100</number></property></widget></item>
-                <item><widget class="Line" name="perSep"><property name="orientation"><enum>Qt::Vertical</enum></property></widget></item>
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="lblPeriodCap">
+                  <property name="text">
+                   <string>Report Period:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lblMonth">
+                  <property name="text">
+                   <string>Month:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="cboMonth">
+                  <property name="minimumSize">
+                   <size>
+                    <width>122</width>
+                    <height>28</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lblYear">
+                  <property name="text">
+                   <string>Year:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinYear">
+                  <property name="minimumSize">
+                   <size>
+                    <width>82</width>
+                    <height>28</height>
+                   </size>
+                  </property>
+                  <property name="minimum">
+                   <number>2000</number>
+                  </property>
+                  <property name="maximum">
+                   <number>2100</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="Line" name="perSep">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                 </widget>
+                </item>
                 <item>
                  <layout class="QVBoxLayout" name="modeCol">
-                  <property name="spacing"><number>1</number></property>
-                  <item><widget class="QRadioButton" name="rdoQ1"><property name="text"><string>1st Quincena</string></property></widget></item>
-                  <item><widget class="QRadioButton" name="rdoQ2"><property name="text"><string>2nd Quincena</string></property></widget></item>
-                  <item><widget class="QRadioButton" name="rdoWholeMonth"><property name="text"><string>Whole Month</string></property><property name="checked"><bool>true</bool></property></widget></item>
+                  <property name="spacing">
+                   <number>1</number>
+                  </property>
+                  <item>
+                   <widget class="QRadioButton" name="rdoQ1">
+                    <property name="text">
+                     <string>1st Quincena</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QRadioButton" name="rdoQ2">
+                    <property name="text">
+                     <string>2nd Quincena</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QRadioButton" name="rdoWholeMonth">
+                    <property name="text">
+                     <string>Whole Month</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
                  </layout>
                 </item>
-                <item><widget class="QCheckBox" name="chkNoWeekend"><property name="text"><string>No weekend work</string></property><property name="checked"><bool>true</bool></property><property name="toolTip"><string>Marks Saturday and Sunday as rest days. Available for MODE I employees only -- a MODE II, III or IV duty runs straight through the weekend, so those days are ordinary working rows.</string></property></widget></item>
-                <item><spacer name="perSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>30</width><height>20</height></size></property></spacer></item>
+                <item>
+                 <widget class="QCheckBox" name="chkNoWeekend">
+                  <property name="toolTip">
+                   <string>Marks Saturday and Sunday as rest days. Available for MODE I employees only -- a MODE II, III or IV duty runs straight through the weekend, so those days are ordinary working rows.</string>
+                  </property>
+                  <property name="text">
+                   <string>No weekend work</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="perSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>30</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
                 <item>
                  <widget class="QPushButton" name="btnPrint">
-                  <property name="enabled"><bool>false</bool></property>
-                  <property name="minimumSize"><size><width>190</width><height>32</height></size></property>
-                  <property name="text"><string>Print DTR   [Ctrl+P]</string></property>
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>190</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Print DTR   [Ctrl+P]</string>
+                  </property>
                  </widget>
                 </item>
                </layout>
               </item>
-
-              <!-- Tab menu, centered below the report-period settings:
-                   switches the table below between the cleaned Daily Time
-                   Record and the raw Open-Time Record. -->
               <item>
                <layout class="QHBoxLayout" name="dtrViewTabRow">
-                <property name="spacing"><number>0</number></property>
-                <item><spacer name="dtrViewTabSpacerL"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item>
+                 <spacer name="dtrViewTabSpacerL">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
                 <item>
                  <widget class="QPushButton" name="btnViewDaily">
-                  <property name="minimumSize"><size><width>170</width><height>30</height></size></property>
-                  <property name="text"><string>Daily-Time Record</string></property>
-                  <property name="checkable"><bool>true</bool></property>
-                  <property name="checked"><bool>true</bool></property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>170</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Daily-Time Record</string>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QPushButton" name="btnViewOpen">
-                  <property name="minimumSize"><size><width>170</width><height>30</height></size></property>
-                  <property name="text"><string>Open-Time Record</string></property>
-                  <property name="checkable"><bool>true</bool></property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>170</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Open-Time Record</string>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
                  </widget>
                 </item>
-                <item><spacer name="dtrViewTabSpacerR"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+                <item>
+                 <spacer name="dtrViewTabSpacerR">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
                </layout>
               </item>
-
               <item>
                <widget class="QStackedWidget" name="stackDtrView">
-                <property name="currentIndex"><number>0</number></property>
-
-                <!-- ===== VIEW: Daily-Time Record (cleaned/computed) ===== -->
+                <property name="currentIndex">
+                 <number>0</number>
+                </property>
                 <widget class="QWidget" name="pageViewDaily">
                  <layout class="QVBoxLayout" name="pageViewDailyLayout">
-                  <property name="leftMargin"><number>0</number></property>
-                  <property name="topMargin"><number>0</number></property>
-                  <property name="rightMargin"><number>0</number></property>
-                  <property name="bottomMargin"><number>0</number></property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
                   <item>
                    <widget class="QTableWidget" name="tblReport">
-                    <property name="alternatingRowColors"><bool>true</bool></property>
-                    <property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property>
-                    <property name="editTriggers"><set>QAbstractItemView::NoEditTriggers</set></property>
+                    <property name="editTriggers">
+                     <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                    </property>
+                    <property name="alternatingRowColors">
+                     <bool>true</bool>
+                    </property>
+                    <property name="selectionBehavior">
+                     <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+                    </property>
                    </widget>
                   </item>
                  </layout>
                 </widget>
-
-                <!-- ===== VIEW: Open-Time Record (raw/uncleaned extraction) ===== -->
                 <widget class="QWidget" name="pageViewOpen">
                  <layout class="QVBoxLayout" name="pageViewOpenLayout">
-                  <property name="leftMargin"><number>0</number></property>
-                  <property name="topMargin"><number>0</number></property>
-                  <property name="rightMargin"><number>0</number></property>
-                  <property name="bottomMargin"><number>0</number></property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
                   <item>
                    <widget class="QTableWidget" name="tblOpenTime">
-                    <property name="alternatingRowColors"><bool>true</bool></property>
-                    <property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property>
-                    <property name="editTriggers"><set>QAbstractItemView::NoEditTriggers</set></property>
+                    <property name="editTriggers">
+                     <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                    </property>
+                    <property name="alternatingRowColors">
+                     <bool>true</bool>
+                    </property>
+                    <property name="selectionBehavior">
+                     <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+                    </property>
                    </widget>
                   </item>
                  </layout>
                 </widget>
-
                </widget>
               </item>
              </layout>
@@ -325,220 +922,664 @@ Photo</string></property>
            </item>
           </layout>
          </widget>
-
-         <!-- ===== PAGE: BATCH REPORT ===== -->
          <widget class="QWidget" name="pageBatch">
           <layout class="QVBoxLayout" name="pageBatchLayout">
-           <property name="leftMargin"><number>14</number></property>
-           <property name="topMargin"><number>12</number></property>
-           <property name="rightMargin"><number>14</number></property>
-           <property name="bottomMargin"><number>12</number></property>
+           <property name="leftMargin">
+            <number>14</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>14</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
            <item>
             <widget class="QGroupBox" name="grpBatch">
-             <property name="title"><string>Batch Report</string></property>
+             <property name="title">
+              <string>Batch Report</string>
+             </property>
              <layout class="QVBoxLayout" name="batchLayout">
               <item>
                <layout class="QHBoxLayout" name="batchControls">
-                <property name="spacing"><number>12</number></property>
-                <item><widget class="QLabel" name="lblBatchMonth"><property name="text"><string>Month:</string></property></widget></item>
-                <item><widget class="QComboBox" name="cboBatchMonth"><property name="minimumSize"><size><width>122</width><height>28</height></size></property></widget></item>
-                <item><widget class="QLabel" name="lblBatchYear"><property name="text"><string>Year:</string></property></widget></item>
-                <item><widget class="QSpinBox" name="spinBatchYear"><property name="minimumSize"><size><width>82</width><height>28</height></size></property><property name="minimum"><number>2000</number></property><property name="maximum"><number>2100</number></property></widget></item>
-                <item><widget class="Line" name="batchSep1"><property name="orientation"><enum>Qt::Vertical</enum></property></widget></item>
+                <property name="spacing">
+                 <number>12</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="lblBatchMonth">
+                  <property name="text">
+                   <string>Month:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="cboBatchMonth">
+                  <property name="minimumSize">
+                   <size>
+                    <width>122</width>
+                    <height>28</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lblBatchYear">
+                  <property name="text">
+                   <string>Year:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBatchYear">
+                  <property name="minimumSize">
+                   <size>
+                    <width>82</width>
+                    <height>28</height>
+                   </size>
+                  </property>
+                  <property name="minimum">
+                   <number>2000</number>
+                  </property>
+                  <property name="maximum">
+                   <number>2100</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="Line" name="batchSep1">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                 </widget>
+                </item>
                 <item>
                  <layout class="QVBoxLayout" name="batchModeCol">
-                  <property name="spacing"><number>1</number></property>
-                  <item><widget class="QRadioButton" name="rdoBatchQ1"><property name="text"><string>1st Quincena</string></property></widget></item>
-                  <item><widget class="QRadioButton" name="rdoBatchQ2"><property name="text"><string>2nd Quincena</string></property></widget></item>
-                  <item><widget class="QRadioButton" name="rdoBatchMonth"><property name="text"><string>Whole Month</string></property><property name="checked"><bool>true</bool></property></widget></item>
+                  <property name="spacing">
+                   <number>1</number>
+                  </property>
+                  <item>
+                   <widget class="QRadioButton" name="rdoBatchQ1">
+                    <property name="text">
+                     <string>1st Quincena</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QRadioButton" name="rdoBatchQ2">
+                    <property name="text">
+                     <string>2nd Quincena</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QRadioButton" name="rdoBatchMonth">
+                    <property name="text">
+                     <string>Whole Month</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
                  </layout>
                 </item>
-                <item><widget class="Line" name="batchSep2"><property name="orientation"><enum>Qt::Vertical</enum></property></widget></item>
-                <item><widget class="QLabel" name="lblBatchDept"><property name="text"><string>Department:</string></property></widget></item>
-                <item><widget class="QComboBox" name="cboBatchDept"><property name="minimumSize"><size><width>190</width><height>28</height></size></property></widget></item>
-                <item><spacer name="batchSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>30</width><height>20</height></size></property></spacer></item>
+                <item>
+                 <widget class="Line" name="batchSep2">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lblBatchDept">
+                  <property name="text">
+                   <string>Department:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="cboBatchDept">
+                  <property name="minimumSize">
+                   <size>
+                    <width>190</width>
+                    <height>28</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="batchSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>30</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
                 <item>
                  <widget class="QPushButton" name="btnBatchPrint">
-                  <property name="enabled"><bool>false</bool></property>
-                  <property name="minimumSize"><size><width>190</width><height>32</height></size></property>
-                  <property name="text"><string>Print All   [Ctrl+P]</string></property>
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>190</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Print All   [Ctrl+P]</string>
+                  </property>
                  </widget>
                 </item>
                </layout>
               </item>
               <item>
                <widget class="QTableWidget" name="tblBatch">
-                <property name="alternatingRowColors"><bool>true</bool></property>
-                <property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property>
-                <property name="editTriggers"><set>QAbstractItemView::NoEditTriggers</set></property>
+                <property name="editTriggers">
+                 <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <property name="selectionBehavior">
+                 <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+                </property>
                </widget>
               </item>
-              <item><widget class="QLabel" name="lblBatchStatus"><property name="text"><string/></property></widget></item>
+              <item>
+               <widget class="QLabel" name="lblBatchStatus">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
              </layout>
             </widget>
            </item>
           </layout>
          </widget>
-
-         <!-- ===== PAGE: ADD NEW EMPLOYEE ===== -->
          <widget class="QWidget" name="pageAdd">
-          <!-- ============================================================
-               The Add Employee page scrolls.
-
-               It is the second-tallest page in the app and it keeps the same
-               problem the Settings page had: below a certain window height
-               the groups get squeezed out of shape. The Work Mode row is the
-               first to go, because the combo and its explanatory label share
-               a row and the label is the part that gives.
-
-               Same wrapper as Settings: pageAddLayout drops to zero margins
-               and holds nothing but the scroll area; the real margins move
-               inside to addContentLayout, so the spacing looks identical
-               while there is room and a scrollbar simply appears when there
-               is not.
-
-               widgetResizable is what makes the content stretch to the
-               viewport width instead of sitting at its own size hint.
-               NoFrame keeps the scroll area from drawing a border inside a
-               page that already has group boxes doing that job.
-               ============================================================ -->
           <layout class="QVBoxLayout" name="pageAddLayout">
-           <property name="leftMargin"><number>0</number></property>
-           <property name="topMargin"><number>0</number></property>
-           <property name="rightMargin"><number>0</number></property>
-           <property name="bottomMargin"><number>0</number></property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <widget class="QScrollArea" name="scrollAdd">
-             <property name="widgetResizable"><bool>true</bool></property>
-             <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+             <property name="frameShape">
+              <enum>QFrame::Shape::NoFrame</enum>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
              <widget class="QWidget" name="scrollAddContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>486</width>
+                <height>594</height>
+               </rect>
+              </property>
               <layout class="QVBoxLayout" name="addContentLayout">
-               <property name="leftMargin"><number>14</number></property>
-               <property name="topMargin"><number>12</number></property>
-               <property name="rightMargin"><number>14</number></property>
-               <property name="bottomMargin"><number>12</number></property>
-
-           <item>
-            <widget class="QGroupBox" name="grpAPhoto">
-             <property name="title"><string>Photo</string></property>
-             <layout class="QHBoxLayout" name="aPhotoLayout">
-              <property name="spacing"><number>14</number></property>
-              <item>
-               <widget class="QLabel" name="lblAPhotoPreview">
-                <property name="minimumSize"><size><width>124</width><height>124</height></size></property>
-                <property name="maximumSize"><size><width>124</width><height>124</height></size></property>
-                <property name="alignment"><set>Qt::AlignCenter</set></property>
-                <property name="text"><string>No
-Photo</string></property>
-                <property name="frameShape"><enum>QFrame::StyledPanel</enum></property>
-               </widget>
-              </item>
-              <item>
-               <layout class="QVBoxLayout" name="aPhotoCol">
-                <property name="spacing"><number>6</number></property>
-                <item><widget class="QLabel" name="lblAPhotoHint"><property name="text"><string/></property><property name="wordWrap"><bool>true</bool></property></widget></item>
-                <item>
-                 <layout class="QHBoxLayout" name="aPhotoBtnRow">
+               <property name="leftMargin">
+                <number>14</number>
+               </property>
+               <property name="topMargin">
+                <number>12</number>
+               </property>
+               <property name="rightMargin">
+                <number>14</number>
+               </property>
+               <property name="bottomMargin">
+                <number>12</number>
+               </property>
+               <item>
+                <widget class="QGroupBox" name="grpAPhoto">
+                 <property name="title">
+                  <string>Photo</string>
+                 </property>
+                 <layout class="QHBoxLayout" name="aPhotoLayout">
+                  <property name="spacing">
+                   <number>14</number>
+                  </property>
                   <item>
-                   <widget class="QPushButton" name="btnAChoosePhoto">
-                    <property name="minimumSize"><size><width>130</width><height>30</height></size></property>
-                    <property name="text"><string>Select Photo...</string></property>
+                   <widget class="QLabel" name="lblAPhotoPreview">
+                    <property name="minimumSize">
+                     <size>
+                      <width>124</width>
+                      <height>124</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>124</width>
+                      <height>124</height>
+                     </size>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::Shape::StyledPanel</enum>
+                    </property>
+                    <property name="text">
+                     <string>No
+Photo</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignmentFlag::AlignCenter</set>
+                    </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="btnARemovePhoto">
-                    <property name="enabled"><bool>false</bool></property>
-                    <property name="minimumSize"><size><width>120</width><height>30</height></size></property>
-                    <property name="text"><string>Remove Photo</string></property>
-                   </widget>
+                   <layout class="QVBoxLayout" name="aPhotoCol">
+                    <property name="spacing">
+                     <number>6</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="lblAPhotoHint">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="aPhotoBtnRow">
+                      <item>
+                       <widget class="QPushButton" name="btnAChoosePhoto">
+                        <property name="minimumSize">
+                         <size>
+                          <width>130</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Select Photo...</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="btnARemovePhoto">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>120</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Remove Photo</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <spacer name="aPhotoBtnSpacer">
+                        <property name="orientation">
+                         <enum>Qt::Orientation::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>20</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="lblAPhotoInfo">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
-                  <item><spacer name="aPhotoBtnSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
                  </layout>
-                </item>
-                <item><widget class="QLabel" name="lblAPhotoInfo"><property name="text"><string/></property><property name="wordWrap"><bool>true</bool></property></widget></item>
-               </layout>
-              </item>
-             </layout>
-            </widget>
-           </item>
-
-           <item>
-            <widget class="QGroupBox" name="grpPersonal">
-             <property name="title"><string>Personal Information</string></property>
-             <layout class="QGridLayout" name="gridPersonal">
-              <property name="horizontalSpacing"><number>16</number></property>
-              <property name="verticalSpacing"><number>9</number></property>
-              <item row="0" column="0"><widget class="QLabel" name="lblASur"><property name="text"><string>Surname: *</string></property></widget></item>
-              <item row="0" column="1"><widget class="QLineEdit" name="txtASurname"/></item>
-              <item row="0" column="2"><widget class="QLabel" name="lblAFirst"><property name="text"><string>First Name: *</string></property></widget></item>
-              <item row="0" column="3"><widget class="QLineEdit" name="txtAFirst"/></item>
-              <item row="1" column="0"><widget class="QLabel" name="lblAMiddle"><property name="text"><string>Middle Name:</string></property></widget></item>
-              <item row="1" column="1"><widget class="QLineEdit" name="txtAMiddle"/></item>
-              <item row="1" column="2"><widget class="QLabel" name="lblASuffix"><property name="text"><string>Suffix:</string></property></widget></item>
-              <item row="1" column="3">
-               <widget class="QComboBox" name="cboASuffix">
-                <property name="editable"><bool>true</bool></property>
-                <item><property name="text"><string/></property></item>
-                <item><property name="text"><string>Jr</string></property></item>
-                <item><property name="text"><string>Sr</string></property></item>
-                <item><property name="text"><string>II</string></property></item>
-                <item><property name="text"><string>III</string></property></item>
-                <item><property name="text"><string>IV</string></property></item>
-               </widget>
-              </item>
-              <item row="2" column="0"><widget class="QLabel" name="lblABirth"><property name="text"><string>Date of Birth: *</string></property></widget></item>
-              <item row="2" column="1"><widget class="QDateEdit" name="dateABirth"><property name="displayFormat"><string>yyyy-MM-dd</string></property><property name="calendarPopup"><bool>true</bool></property></widget></item>
-              <item row="2" column="2"><widget class="QLabel" name="lblASex"><property name="text"><string>Sex: *</string></property></widget></item>
-              <item row="2" column="3"><widget class="QComboBox" name="cboASex"><item><property name="text"><string>M</string></property></item><item><property name="text"><string>F</string></property></item></widget></item>
-             </layout>
-            </widget>
-           </item>
-
-           <item>
-            <widget class="QGroupBox" name="grpWork">
-             <property name="title"><string>Work Information</string></property>
-             <layout class="QGridLayout" name="gridWork">
-              <property name="horizontalSpacing"><number>16</number></property>
-              <property name="verticalSpacing"><number>9</number></property>
-              <item row="0" column="0"><widget class="QLabel" name="lblADept"><property name="text"><string>Department: *</string></property></widget></item>
-              <item row="0" column="1"><widget class="QComboBox" name="cboADept"><property name="editable"><bool>true</bool></property></widget></item>
-              <item row="0" column="2"><widget class="QLabel" name="lblAJob"><property name="text"><string>Job Category: *</string></property></widget></item>
-              <item row="0" column="3"><widget class="QComboBox" name="cboAJob"><item><property name="text"><string>REGULAR</string></property></item><item><property name="text"><string>JO</string></property></item><item><property name="text"><string>SJO</string></property></item></widget></item>
-              <item row="1" column="0"><widget class="QLabel" name="lblAId"><property name="text"><string>ID Number: *</string></property></widget></item>
-              <item row="1" column="1"><widget class="QSpinBox" name="spinAId"><property name="minimum"><number>1</number></property><property name="maximum"><number>99999999</number></property></widget></item>
-              <item row="1" column="2" colspan="2"><widget class="QLabel" name="lblAIdHint"><property name="text"><string/></property><property name="wordWrap"><bool>true</bool></property></widget></item>
-              <item row="2" column="0"><widget class="QLabel" name="lblAWorkMode"><property name="text"><string>Work Schedule: *</string></property></widget></item>
-              <item row="2" column="1" colspan="3"><widget class="QComboBox" name="cboAWorkMode"><property name="toolTip"><string>Which schedule this employee's DTR is computed against.
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="grpPersonal">
+                 <property name="title">
+                  <string>Personal Information</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridPersonal">
+                  <property name="horizontalSpacing">
+                   <number>16</number>
+                  </property>
+                  <property name="verticalSpacing">
+                   <number>9</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="lblASur">
+                    <property name="text">
+                     <string>Surname: *</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLineEdit" name="txtASurname"/>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="lblAFirst">
+                    <property name="text">
+                     <string>First Name: *</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QLineEdit" name="txtAFirst"/>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="lblAMiddle">
+                    <property name="text">
+                     <string>Middle Name:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="txtAMiddle"/>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLabel" name="lblASuffix">
+                    <property name="text">
+                     <string>Suffix:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="3">
+                   <widget class="QComboBox" name="cboASuffix">
+                    <property name="editable">
+                     <bool>true</bool>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Jr</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Sr</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>II</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>III</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>IV</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="lblABirth">
+                    <property name="text">
+                     <string>Date of Birth: *</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QDateEdit" name="dateABirth">
+                    <property name="displayFormat">
+                     <string>yyyy-MM-dd</string>
+                    </property>
+                    <property name="calendarPopup">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QLabel" name="lblASex">
+                    <property name="text">
+                     <string>Sex: *</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="3">
+                   <widget class="QComboBox" name="cboASex">
+                    <item>
+                     <property name="text">
+                      <string>M</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>F</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="grpWork">
+                 <property name="title">
+                  <string>Work Information</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridWork">
+                  <property name="horizontalSpacing">
+                   <number>16</number>
+                  </property>
+                  <property name="verticalSpacing">
+                   <number>9</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="lblADept">
+                    <property name="text">
+                     <string>Department: *</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="cboADept">
+                    <property name="editable">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="lblAJob">
+                    <property name="text">
+                     <string>Job Category: *</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QComboBox" name="cboAJob">
+                    <item>
+                     <property name="text">
+                      <string>REGULAR</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>JO</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>SJO</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="lblAId">
+                    <property name="text">
+                     <string>ID Number: *</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QSpinBox" name="spinAId">
+                    <property name="minimum">
+                     <number>1</number>
+                    </property>
+                    <property name="maximum">
+                     <number>99999999</number>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2" colspan="2">
+                   <widget class="QLabel" name="lblAIdHint">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="lblAWorkMode">
+                    <property name="text">
+                     <string>Work Schedule: *</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1" colspan="3">
+                   <widget class="QComboBox" name="cboAWorkMode">
+                    <property name="toolTip">
+                     <string>Which schedule this employee's DTR is computed against.
 MODE I   - Regular office day, 8:00-12:00 and 13:00-17:00.
 MODE II  - 24-hour duty, 8:00 AM to 8:00 AM the next day.
 MODE III - 24-hour duty, 7:00 AM to 7:00 AM the next day, with a punched lunch at 12:00 and 13:00.
-MODE IV  - Variable start, 8 hours per duty.</string></property></widget></item>
-              <item row="3" column="1" colspan="3"><widget class="QLabel" name="lblAWorkModeInfo"><property name="text"><string/></property><property name="wordWrap"><bool>true</bool></property></widget></item>
-              <item row="4" column="0"><widget class="QLabel" name="lblAAccomplish"><property name="text"><string>Accomplishments:</string></property></widget></item>
-              <item row="4" column="1" colspan="3"><widget class="QCheckBox" name="chkAAccomplishments"><property name="text"><string>Show accomplishments area on the printed DTR</string></property><property name="toolTip"><string>Always on for JO staff. Optional for REGULAR staff.</string></property></widget></item>
-             </layout>
-            </widget>
-           </item>
-
-           <item><widget class="QLabel" name="lblAddError"><property name="text"><string/></property><property name="wordWrap"><bool>true</bool></property></widget></item>
-
-           <item>
-            <layout class="QHBoxLayout" name="addButtons">
-             <item><spacer name="addBtnSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
-             <item>
-              <widget class="QPushButton" name="btnAddSave">
-               <property name="minimumSize"><size><width>170</width><height>34</height></size></property>
-               <property name="text"><string>Add New Employee</string></property>
-              </widget>
-             </item>
-             <item><widget class="QPushButton" name="btnAddClear"><property name="minimumSize"><size><width>130</width><height>34</height></size></property><property name="text"><string>Clear Form</string></property></widget></item>
-            </layout>
-           </item>
-
-           <!-- Collapses to nothing when the page is short of room, so the
-                    groups keep their natural height and the scrollbar takes
-                    over rather than the spacer fighting it. -->
-               <item><spacer name="addVSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property></spacer></item>
+MODE IV  - Variable start, 8 hours per duty.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1" colspan="3">
+                   <widget class="QLabel" name="lblAWorkModeInfo">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="lblAAccomplish">
+                    <property name="text">
+                     <string>Accomplishments:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1" colspan="3">
+                   <widget class="QCheckBox" name="chkAAccomplishments">
+                    <property name="toolTip">
+                     <string>Always on for JO staff. Optional for REGULAR staff.</string>
+                    </property>
+                    <property name="text">
+                     <string>Show accomplishments area on the printed DTR</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblAddError">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="addButtons">
+                 <item>
+                  <spacer name="addBtnSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnAddSave">
+                   <property name="minimumSize">
+                    <size>
+                     <width>170</width>
+                     <height>34</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Add New Employee</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnAddClear">
+                   <property name="minimumSize">
+                    <size>
+                     <width>130</width>
+                     <height>34</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Clear Form</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="addVSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
               </layout>
              </widget>
             </widget>
@@ -547,268 +1588,636 @@ MODE IV  - Variable start, 8 hours per duty.</string></property></widget></item>
          </widget>
          <widget class="QWidget" name="pageSignatory">
           <layout class="QVBoxLayout" name="pageSignatoryLayout">
-           <property name="leftMargin"><number>0</number></property>
-           <property name="topMargin"><number>0</number></property>
-           <property name="rightMargin"><number>0</number></property>
-           <property name="bottomMargin"><number>0</number></property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <widget class="QScrollArea" name="scrollSettings">
-             <property name="widgetResizable"><bool>true</bool></property>
-             <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+             <property name="frameShape">
+              <enum>QFrame::Shape::NoFrame</enum>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
              <widget class="QWidget" name="scrollSettingsContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>445</width>
+                <height>902</height>
+               </rect>
+              </property>
               <layout class="QVBoxLayout" name="settingsContentLayout">
-               <property name="leftMargin"><number>14</number></property>
-               <property name="topMargin"><number>12</number></property>
-               <property name="rightMargin"><number>14</number></property>
-               <property name="bottomMargin"><number>12</number></property>
+               <property name="leftMargin">
+                <number>14</number>
+               </property>
+               <property name="topMargin">
+                <number>12</number>
+               </property>
+               <property name="rightMargin">
+                <number>14</number>
+               </property>
+               <property name="bottomMargin">
+                <number>12</number>
+               </property>
                <item>
                 <widget class="QGroupBox" name="grpSignatory">
-                 <property name="title"><string>Department Signatory</string></property>
+                 <property name="title">
+                  <string>Department Signatory</string>
+                 </property>
                  <layout class="QVBoxLayout" name="sigOuter">
                   <item>
                    <layout class="QHBoxLayout" name="sigDeptRow">
-                    <item><widget class="QLabel" name="lblSigDept"><property name="text"><string>Department :</string></property></widget></item>
                     <item>
-                     <widget class="QComboBox" name="cboSigDept">
-                      <property name="minimumSize"><size><width>260</width><height>28</height></size></property>
+                     <widget class="QLabel" name="lblSigDept">
+                      <property name="text">
+                       <string>Department :</string>
+                      </property>
                      </widget>
                     </item>
-                    <item><widget class="QLabel" name="lblSigDeptState"><property name="text"><string/></property></widget></item>
-                    <item><spacer name="sigDeptSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+                    <item>
+                     <widget class="QComboBox" name="cboSigDept">
+                      <property name="minimumSize">
+                       <size>
+                        <width>260</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="lblSigDeptState">
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="sigDeptSpacer">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
                    </layout>
                   </item>
                   <item>
                    <widget class="QLabel" name="lblSigHelp">
-                    <property name="wordWrap"><bool>true</bool></property>
-                    <property name="text"><string>Employees in a department with nothing set here fall back to the default entry.</string></property>
+                    <property name="text">
+                     <string>Employees in a department with nothing set here fall back to the default entry.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
                    </widget>
                   </item>
                   <item>
                    <layout class="QGridLayout" name="gridSig" columnstretch="0,1,0,1">
-                    <property name="horizontalSpacing"><number>12</number></property>
-                    <property name="verticalSpacing"><number>12</number></property>
-                    <item row="0" column="0"><widget class="QLabel" name="lblSig1"><property name="text"><string>Signatory :</string></property><property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property></widget></item>
-                    <item row="0" column="1"><widget class="QLineEdit" name="txtSig1Name"><property name="placeholderText"><string>Full name</string></property></widget></item>
-                    <item row="0" column="2"><widget class="QLabel" name="lblSig1Pos"><property name="text"><string>Position :</string></property><property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property></widget></item>
-                    <item row="0" column="3"><widget class="QLineEdit" name="txtSig1Pos"><property name="placeholderText"><string>e.g. Department Head</string></property></widget></item>
+                    <property name="spacing">
+                     <number>12</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="lblSig1">
+                      <property name="text">
+                       <string>Signatory :</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLineEdit" name="txtSig1Name">
+                      <property name="placeholderText">
+                       <string>Full name</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="2">
+                     <widget class="QLabel" name="lblSig1Pos">
+                      <property name="text">
+                       <string>Position :</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="3">
+                     <widget class="QLineEdit" name="txtSig1Pos">
+                      <property name="placeholderText">
+                       <string>e.g. Department Head</string>
+                      </property>
+                     </widget>
+                    </item>
                    </layout>
                   </item>
-                  <item><widget class="QLabel" name="lblSigStatus"><property name="text"><string/></property></widget></item>
+                  <item>
+                   <widget class="QLabel" name="lblSigStatus">
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
                   <item>
                    <layout class="QHBoxLayout" name="sigButtons">
-                    <item><spacer name="sigSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
-                    <item><widget class="QPushButton" name="btnSigSave"><property name="minimumSize"><size><width>150</width><height>32</height></size></property><property name="text"><string>Save Signatories</string></property></widget></item>
-                    <item><widget class="QPushButton" name="btnSigRevert"><property name="minimumSize"><size><width>110</width><height>32</height></size></property><property name="text"><string>Revert</string></property></widget></item>
+                    <item>
+                     <spacer name="sigSpacer">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnSigSave">
+                      <property name="minimumSize">
+                       <size>
+                        <width>150</width>
+                        <height>32</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Save Signatories</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnSigRevert">
+                      <property name="minimumSize">
+                       <size>
+                        <width>110</width>
+                        <height>32</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Revert</string>
+                      </property>
+                     </widget>
+                    </item>
                    </layout>
                   </item>
-                  <item><spacer name="sigVSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property></spacer></item>
+                  <item>
+                   <spacer name="sigVSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
                  </layout>
                 </widget>
                </item>
-
-               <!-- ===== Database / restore points ===== -->
                <item>
                 <widget class="QGroupBox" name="grpDatabase">
-                 <property name="title"><string>Database</string></property>
+                 <property name="title">
+                  <string>Database</string>
+                 </property>
                  <layout class="QVBoxLayout" name="databaseOuter">
                   <item>
                    <widget class="QLabel" name="lblDatabaseHelp">
-                    <property name="wordWrap"><bool>true</bool></property>
-                    <property name="text"><string>Installing a newer version of the program upgrades the database by itself the first time it runs. Before that happens -- and before any new program version runs for the first time -- a complete copy is saved as a restore point, so an update that turns out to be a mistake can be undone.</string></property>
+                    <property name="text">
+                     <string>Installing a newer version of the program upgrades the database by itself the first time it runs. Before that happens -- and before any new program version runs for the first time -- a complete copy is saved as a restore point, so an update that turns out to be a mistake can be undone.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
                    </widget>
                   </item>
                   <item>
                    <layout class="QHBoxLayout" name="databaseButtons">
                     <item>
                      <widget class="QPushButton" name="btnRestorePoints">
-                      <property name="minimumSize"><size><width>190</width><height>30</height></size></property>
-                      <property name="text"><string>Restore Points...</string></property>
-                      <property name="toolTip"><string>List the saved copies of the database and roll back to one of them.</string></property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>190</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>List the saved copies of the database and roll back to one of them.</string>
+                      </property>
+                      <property name="text">
+                       <string>Restore Points...</string>
+                      </property>
                      </widget>
                     </item>
-                    <item><spacer name="databaseBtnSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+                    <item>
+                     <spacer name="databaseBtnSpacer">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
                    </layout>
                   </item>
                   <item>
                    <widget class="QLabel" name="lblDatabaseState">
-                    <property name="wordWrap"><bool>true</bool></property>
-                    <property name="text"><string/></property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
                    </widget>
                   </item>
                  </layout>
                 </widget>
                </item>
-
-               <!-- ===== Data Archive ===== -->
                <item>
                 <widget class="QGroupBox" name="grpArchive">
-                 <property name="title"><string>Data Archive</string></property>
+                 <property name="title">
+                  <string>Data Archive</string>
+                 </property>
                  <layout class="QVBoxLayout" name="archiveOuter">
                   <item>
                    <widget class="QLabel" name="lblArchiveHelp">
-                    <property name="wordWrap"><bool>true</bool></property>
-                    <property name="text"><string>A completed year is moved into its own archive file from 15 January onward, covering 1 January to 31 December of that year. The delay leaves room for late December imports. A full backup is taken before anything is removed, and rows are only removed once every one of them has been confirmed present in the archive.</string></property>
+                    <property name="text">
+                     <string>A completed year is moved into its own archive file from 15 January onward, covering 1 January to 31 December of that year. The delay leaves room for late December imports. A full backup is taken before anything is removed, and rows are only removed once every one of them has been confirmed present in the archive.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QCheckBox" name="chkArchiveAuto">
-                    <property name="text"><string>Archive completed years automatically at start-up</string></property>
+                    <property name="text">
+                     <string>Archive completed years automatically at start-up</string>
+                    </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QCheckBox" name="chkArchivePurge">
-                    <property name="text"><string>Remove archived records from the live database</string></property>
-                    <property name="toolTip"><string>Untick to make archiving a pure copy. The archive files are still written and still viewable, but the live database keeps every year and will keep growing.</string></property>
+                    <property name="toolTip">
+                     <string>Untick to make archiving a pure copy. The archive files are still written and still viewable, but the live database keeps every year and will keep growing.</string>
+                    </property>
+                    <property name="text">
+                     <string>Remove archived records from the live database</string>
+                    </property>
                    </widget>
                   </item>
                   <item>
                    <layout class="QHBoxLayout" name="archiveButtons">
                     <item>
                      <widget class="QPushButton" name="btnViewArchives">
-                      <property name="minimumSize"><size><width>170</width><height>30</height></size></property>
-                      <property name="text"><string>View Archived Years...</string></property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>170</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>View Archived Years...</string>
+                      </property>
                      </widget>
                     </item>
                     <item>
                      <widget class="QPushButton" name="btnArchiveNow">
-                      <property name="minimumSize"><size><width>150</width><height>30</height></size></property>
-                      <property name="text"><string>Archive Now...</string></property>
-                      <property name="toolTip"><string>Runs the same archiving step start-up would, for every year that is already eligible.</string></property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>150</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Runs the same archiving step start-up would, for every year that is already eligible.</string>
+                      </property>
+                      <property name="text">
+                       <string>Archive Now...</string>
+                      </property>
                      </widget>
                     </item>
-                    <item><spacer name="archiveBtnSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+                    <item>
+                     <spacer name="archiveBtnSpacer">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
                    </layout>
                   </item>
                   <item>
                    <widget class="QLabel" name="lblArchiveState">
-                    <property name="wordWrap"><bool>true</bool></property>
-                    <property name="text"><string/></property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
                    </widget>
                   </item>
                  </layout>
                 </widget>
                </item>
-
-               <!-- ===== Report Editor ===== -->
                <item>
                 <widget class="QGroupBox" name="grpReportEditor">
-                 <property name="title"><string>Report Template</string></property>
+                 <property name="title">
+                  <string>Report Template</string>
+                 </property>
                  <layout class="QVBoxLayout" name="reportEditorOuter">
                   <item>
                    <widget class="QPushButton" name="btnOpenReportEditor">
-                    <property name="minimumSize"><size><width>0</width><height>30</height></size></property>
-                    <property name="text"><string>Open Report Editor...</string></property>
-                    <property name="toolTip"><string>Opens the CSC Form 48 layout in the Report Designer -- column widths, fonts, the header logos, and the RELEASED stamp artwork are all placed there directly. Requires developer mode.</string></property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="toolTip">
+                     <string>Opens the CSC Form 48 layout in the Report Designer -- column widths, fonts, the header logos, and the RELEASED stamp artwork are all placed there directly. Requires developer mode.</string>
+                    </property>
+                    <property name="text">
+                     <string>Open Report Editor...</string>
+                    </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QLabel" name="lblReportEditorHelp">
-                    <property name="wordWrap"><bool>true</bool></property>
-                    <property name="text"><string>Changes apply to every future print and preview. Unlock developer mode below first (Console Command: "godmode 1").</string></property>
+                    <property name="text">
+                     <string>Changes apply to every future print and preview. Unlock developer mode below first (Console Command: &quot;godmode 1&quot;).</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
                    </widget>
                   </item>
                  </layout>
                 </widget>
                </item>
-
-               <!-- ===== Developer ===== -->
                <item>
                 <widget class="QGroupBox" name="grpDeveloper">
-                 <property name="title"><string>Developer</string></property>
+                 <property name="title">
+                  <string>Developer</string>
+                 </property>
                  <layout class="QVBoxLayout" name="devOuter">
                   <item>
                    <layout class="QHBoxLayout" name="devConsoleRow">
-                    <item><widget class="QLabel" name="lblConsoleCmd"><property name="text"><string>Console Command :</string></property></widget></item>
                     <item>
-                     <widget class="QLineEdit" name="txtConsoleCmd">
-                      <property name="minimumSize"><size><width>260</width><height>28</height></size></property>
-                      <property name="maximumSize"><size><width>360</width><height>28</height></size></property>
-                      <property name="placeholderText"><string>Type a command and press Enter</string></property>
+                     <widget class="QLabel" name="lblConsoleCmd">
+                      <property name="text">
+                       <string>Console Command :</string>
+                      </property>
                      </widget>
                     </item>
-                    <item><widget class="QLabel" name="lblConsoleState"><property name="text"><string/></property></widget></item>
-                    <item><spacer name="devConsoleSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+                    <item>
+                     <widget class="QLineEdit" name="txtConsoleCmd">
+                      <property name="minimumSize">
+                       <size>
+                        <width>260</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>360</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Type a command and press Enter</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="lblConsoleState">
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="devConsoleSpacer">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
                    </layout>
                   </item>
-
-                  <!-- Everything below is hidden until the console unlocks it. -->
                   <item>
-                   <widget class="QWidget" name="devOptions">
-                    <property name="visible"><bool>false</bool></property>
-                    <layout class="QVBoxLayout" name="devOptionsLayout">
-                     <property name="leftMargin"><number>0</number></property>
-                     <property name="topMargin"><number>6</number></property>
-                     <property name="rightMargin"><number>0</number></property>
-                     <property name="bottomMargin"><number>0</number></property>
-                     <item>
-                      <layout class="QHBoxLayout" name="devRelDateRow">
-                       <item>
-                        <widget class="QCheckBox" name="chkOverrideRelease">
-                         <property name="text"><string>Override release date</string></property>
-                         <property name="toolTip"><string>Prints this date in the RELEASED stamp of the CSC Form 48 instead of today's date. The TIME in the stamp stays the real time of printing.</string></property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QDateEdit" name="dateOverrideRelease">
-                         <property name="minimumSize"><size><width>160</width><height>28</height></size></property>
-                         <property name="enabled"><bool>false</bool></property>
-                         <property name="calendarPopup"><bool>true</bool></property>
-                         <property name="displayFormat"><string>MMMM d, yyyy</string></property>
-                        </widget>
-                       </item>
-                       <item><spacer name="devRelDateSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
-                      </layout>
-                     </item>
-                     <item>
-                      <widget class="QCheckBox" name="chkAllowTimeEdit">
-                       <property name="text"><string>Allow time modification</string></property>
-                       <property name="toolTip"><string>Makes the four time columns of the Daily Time Record table editable. Edits are written straight to the biometric log and cannot be undone.</string></property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="lblDevWarn">
-                       <property name="wordWrap"><bool>true</bool></property>
-                       <property name="text"><string>Editing a time rewrites the raw biometric record for that employee. The change is permanent and leaves no trace that the punch was altered. Developer mode itself is never saved: it is off again the next time the program starts.</string></property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
+                   <layout class="QVBoxLayout" name="devOptionsLayout">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>6</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <layout class="QHBoxLayout" name="devRelDateRow">
+                      <item>
+                       <widget class="QCheckBox" name="chkOverrideRelease">
+                        <property name="toolTip">
+                         <string>Prints this date in the RELEASED stamp of the CSC Form 48 instead of today's date. The TIME in the stamp stays the real time of printing.</string>
+                        </property>
+                        <property name="text">
+                         <string>Override release date</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QDateEdit" name="dateOverrideRelease">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>160</width>
+                          <height>28</height>
+                         </size>
+                        </property>
+                        <property name="displayFormat">
+                         <string>MMMM d, yyyy</string>
+                        </property>
+                        <property name="calendarPopup">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <spacer name="devRelDateSpacer">
+                        <property name="orientation">
+                         <enum>Qt::Orientation::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <widget class="QCheckBox" name="chkAllowTimeEdit">
+                      <property name="toolTip">
+                       <string>Makes the four time columns of the Daily Time Record table editable. Edits are written straight to the biometric log and cannot be undone.</string>
+                      </property>
+                      <property name="text">
+                       <string>Allow time modification</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="lblDevWarn">
+                      <property name="text">
+                       <string>Editing a time rewrites the raw biometric record for that employee. The change is permanent and leaves no trace that the punch was altered. Developer mode itself is never saved: it is off again the next time the program starts.</string>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
-                  <item><spacer name="devVSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
+                  <item>
+                   <spacer name="devVSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
                  </layout>
                 </widget>
                </item>
-               <item><spacer name="settingsTailSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Expanding</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>0</height></size></property></spacer></item>
+               <item>
+                <spacer name="settingsTailSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Policy::Expanding</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
               </layout>
              </widget>
             </widget>
            </item>
           </layout>
          </widget>
-
         </widget>
        </item>
        <item>
         <widget class="Line" name="creditLine">
-         <property name="orientation"><enum>Qt::Horizontal</enum></property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QFrame" name="creditFrame">
-         <property name="minimumSize"><size><width>0</width><height>26</height></size></property>
-         <property name="maximumSize"><size><width>16777215</width><height>26</height></size></property>
-         <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::NoFrame</enum>
+         </property>
          <layout class="QHBoxLayout" name="creditFrameLayout">
-          <property name="leftMargin"><number>14</number></property>
-          <property name="topMargin"><number>2</number></property>
-          <property name="rightMargin"><number>14</number></property>
-          <property name="bottomMargin"><number>2</number></property>
+          <property name="leftMargin">
+           <number>14</number>
+          </property>
+          <property name="topMargin">
+           <number>2</number>
+          </property>
+          <property name="rightMargin">
+           <number>14</number>
+          </property>
+          <property name="bottomMargin">
+           <number>2</number>
+          </property>
           <item>
            <widget class="QLabel" name="lblCredit">
-            <property name="text"><string>Made with Qt  |  Made by woodrow.fajardo@outlook.com.</string></property>
+            <property name="text">
+             <string>Made with Qt  |  Made by woodrow.fajardo@outlook.com.</string>
+            </property>
            </widget>
           </item>
-          <item><spacer name="creditSpacerR"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
+          <item>
+           <spacer name="creditSpacerR">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>10</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
          </layout>
         </widget>
        </item>
@@ -816,11 +2225,18 @@ MODE IV  - Variable start, 8 hours per duty.</string></property></widget></item>
      </widget>
     </item>
    </layout>
-
-   <!-- floating suggestion panel; positioned under the search box in code -->
    <widget class="QListWidget" name="listResults">
-    <property name="geometry"><rect><x>500</x><y>60</y><width>320</width><height>170</height></rect></property>
-    <property name="visible"><bool>false</bool></property>
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>60</y>
+      <width>320</width>
+      <height>170</height>
+     </rect>
+    </property>
+    <property name="visible">
+     <bool>false</bool>
+    </property>
    </widget>
   </widget>
  </widget>

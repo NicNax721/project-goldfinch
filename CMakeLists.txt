@@ -16,6 +16,7 @@ add_executable(${PROJECT_NAME}
     src/mainwindow.cpp
     src/mainwindow.h
     src/mainwindow.ui
+    src/resources/resources.qrc
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE

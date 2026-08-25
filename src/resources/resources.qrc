@@ -1,117 +1,30 @@
-<!-- ==========================================================================
-     DTR System : compiled-in resources
-     ==========================================================================
-
-     WHAT THIS FILE IS
-     =================
-     A Qt Resource Collection file. Every path listed here is compiled INTO
-     the executable by CMake's AUTORCC (switched on in cmake/QtSetup.cmake)
-     and is then reachable at runtime through a ":/" path. Nothing listed
-     here ships as a loose file next to the .exe; it is inside it.
-
-     THE PREFIX
-     ==========
-     One <qresource> block with prefix="/" means the resource path is just
-     the prefix plus the name, so:
-
-         style.qss                    becomes  :/style.qss
-         icons/check.png              becomes  :/icons/check.png
-         templates/csc_form_48.lrxml  becomes  :/templates/csc_form_48.lrxml
-
-     This flat layout is deliberate. main.cpp opens QFile(":/style.qss") and
-     style.qss itself writes url(:/icons/check.png). The style pack arrived
-     with a different layout (prefix="/qss" plus prefix="/icons") which would
-     have moved the sheet to :/qss/style.qss and broken that QFile call. The
-     icon paths come out identical either way, so keeping the flat prefix
-     costs nothing and leaves main.cpp untouched.
-
-     THE alias= ATTRIBUTE
-     ====================
-     alias lets the name INSIDE the binary differ from the name on disk. It
-     is used below for the high-DPI images only, because "@" is awkward in a
-     filename on some tooling but is exactly what Qt wants in the resource
-     path. So check-2x.png on disk becomes :/icons/check@2x.png in the binary.
-
-     HIGH-DPI: WHY THE @2x FILES ARE HERE
-     ====================================
-     On a 150% or 200% display Qt looks for "name@2x.ext" beside the image it
-     was asked for and uses that instead when it exists. The base icons here
-     are small on purpose (12px arrows, 14px check and radio, 10px spinner
-     arrows) and would go visibly soft when scaled up; the @2x twins are the
-     same artwork at double the pixels. You never reference an @2x path
-     yourself. style.qss asks for :/icons/check.png and Qt picks up
-     :/icons/check@2x.png by itself on the machines that need it. Both have
-     to be listed here or that lookup finds nothing.
-
-     ADDING SOMETHING NEW
-     ====================
-     Drop the file in the tree, add a <file> line, then REBUILD. AUTORCC
-     caches hard, so if a new file seems missing at runtime, run Build >
-     Run CMake and then a full rebuild before looking for a real bug.
-     ========================================================================== -->
-<!DOCTYPE RCC><RCC version="1.0">
-<qresource prefix="/">
-
-    <!-- The application theme. Read by main.cpp and applied to the whole
-         QApplication before the first window is shown. -->
-    <file>style.qss</file>
-
-    <!-- ===============================================================
-         City seal.
-
-         city_seal.png is 96x96 and is what mainwindow.ui puts in the
-         sidebar (lblLogo). That label has no scaledContents, so it draws
-         a pixmap at its natural size. Feeding it the full 512x512
-         original would force the label to 512px wide and blow out the
-         222px sidebar, hence the pre-sized copy.
-
-         city_seal_full.png is the untouched 512x512 artwork. Nothing uses
-         it yet. It is kept for the watermark the theme has a rule for
-         (QLabel#lblWatermark), which has no widget behind it in the .ui
-         files at the moment, and for any print or about-box use later.
-         =============================================================== -->
-    <file>icons/city_seal.png</file>
-    <file alias="icons/city_seal@2x.png">icons/city_seal-2x.png</file>
-    <file>icons/city_seal_full.png</file>
-
-    <!-- Check box indicators -->
-    <file>icons/check.png</file>
-    <file alias="icons/check@2x.png">icons/check-2x.png</file>
-    <file>icons/check_disabled.png</file>
-    <file alias="icons/check_disabled@2x.png">icons/check_disabled-2x.png</file>
-
-    <!-- Radio button indicators -->
-    <file>icons/radio_off.png</file>
-    <file alias="icons/radio_off@2x.png">icons/radio_off-2x.png</file>
-    <file>icons/radio_on.png</file>
-    <file alias="icons/radio_on@2x.png">icons/radio_on-2x.png</file>
-    <file>icons/radio_disabled.png</file>
-    <file alias="icons/radio_disabled@2x.png">icons/radio_disabled-2x.png</file>
-
-    <!-- Combo box and date edit drop-down arrows. arrow_down_white is for
-         arrows sitting on dark chrome, where the normal dark arrow would
-         disappear into the background. -->
-    <file>icons/arrow_down.png</file>
-    <file alias="icons/arrow_down@2x.png">icons/arrow_down-2x.png</file>
-    <file>icons/arrow_down_disabled.png</file>
-    <file alias="icons/arrow_down_disabled@2x.png">icons/arrow_down_disabled-2x.png</file>
-    <file>icons/arrow_down_white.png</file>
-    <file alias="icons/arrow_down_white@2x.png">icons/arrow_down_white-2x.png</file>
-
-    <!-- Spin box / date edit steppers -->
-    <file>icons/spin_up.png</file>
-    <file alias="icons/spin_up@2x.png">icons/spin_up-2x.png</file>
-    <file>icons/spin_down.png</file>
-    <file alias="icons/spin_down@2x.png">icons/spin_down-2x.png</file>
-
-    <!-- ===============================================================
-         LimeReport template for CSC Form 48. Compiled in so a fresh
-         install always has a working report even before anyone opens the
-         designer. cscform48.cpp writes a copy out to the data folder on
-         first run and edits that copy from then on, because a resource is
-         read-only and the designer cannot save back into :/ .
-         =============================================================== -->
-    <file>templates/csc_form_48.lrxml</file>
-
-</qresource>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>style.qss</file>
+        <file>icons/city_seal.png</file>
+        <file alias="icons/city_seal@2x.png">icons/city_seal-2x.png</file>
+        <file>icons/city_seal_full.png</file>
+        <file>icons/check.png</file>
+        <file alias="icons/check@2x.png">icons/check-2x.png</file>
+        <file>icons/check_disabled.png</file>
+        <file alias="icons/check_disabled@2x.png">icons/check_disabled-2x.png</file>
+        <file>icons/radio_off.png</file>
+        <file alias="icons/radio_off@2x.png">icons/radio_off-2x.png</file>
+        <file>icons/radio_on.png</file>
+        <file alias="icons/radio_on@2x.png">icons/radio_on-2x.png</file>
+        <file>icons/radio_disabled.png</file>
+        <file alias="icons/radio_disabled@2x.png">icons/radio_disabled-2x.png</file>
+        <file>icons/arrow_down.png</file>
+        <file alias="icons/arrow_down@2x.png">icons/arrow_down-2x.png</file>
+        <file>icons/arrow_down_disabled.png</file>
+        <file alias="icons/arrow_down_disabled@2x.png">icons/arrow_down_disabled-2x.png</file>
+        <file>icons/arrow_down_white.png</file>
+        <file alias="icons/arrow_down_white@2x.png">icons/arrow_down_white-2x.png</file>
+        <file>icons/spin_up.png</file>
+        <file alias="icons/spin_up@2x.png">icons/spin_up-2x.png</file>
+        <file>icons/spin_down.png</file>
+        <file alias="icons/spin_down@2x.png">icons/spin_down-2x.png</file>
+        <file>templates/csc_form_48.lrxml</file>
+    </qresource>
+    <qresource prefix="/icons/arrow_down_disabled.png"/>
 </RCC>

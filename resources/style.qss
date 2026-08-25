@@ -1,0 +1,717 @@
+/* ============================================================================
+   Baybay City Gov HR System — "Clean Enterprise" theme
+   Qt Style Sheet.  Loaded in main.cpp at start-up:
+       QFile f(":/style.qss");
+       f.open(QIODevice::ReadOnly | QIODevice::Text);
+       qApp->setStyleSheet(QString::fromUtf8(f.readAll()));
+
+   Icons referenced below live under :/icons/ (see resources.qrc).
+   Palette:  ground #f4f6f8 | surface #ffffff | text #23272b
+             chrome #20303f | accent #2c5f9e | line #dbe0e6 | danger #b31942
+   ============================================================================ */
+
+/* ---------------------------------------------------------------- base ---- */
+QWidget {
+    background-color: #f4f6f8;
+    color: #23272b;
+    font-family: "Segoe UI";
+    font-size: 13px;
+}
+QMainWindow, QDialog { background-color: #f4f6f8; }
+
+QLabel { background-color: transparent; color: #23272b; }
+QLabel:disabled { color: #a3a9b0; }
+
+QToolTip {
+    background-color: #23272b;
+    color: #ffffff;
+    border: 0px;
+    padding: 5px 8px;
+}
+
+/* ------------------------------------------------------------- buttons ---- */
+QPushButton {
+    background-color: #ffffff;
+    color: #23272b;
+    border: 1px solid #c6ccd4;
+    border-radius: 3px;
+    padding: 5px 14px;
+    min-height: 22px;
+}
+QPushButton:hover    { background-color: #eef3f9; border-color: #8dabcb; }
+QPushButton:pressed  { background-color: #dbe6f3; border-color: #2c5f9e; }
+QPushButton:focus    { border: 1px solid #2c5f9e; }
+QPushButton:disabled { background-color: #f0f1f3; color: #a9aeb5; border-color: #dcdfe4; }
+
+/* primary actions */
+QPushButton#btnAddSave, QPushButton#btnPrint, QPushButton#btnBatchPrint,
+QPushButton#btnSigSave, QPushButton#btnRetire, QPushButton#btnRestore {
+    background-color: #2c5f9e;
+    color: #ffffff;
+    border: 1px solid #24507f;
+    font-weight: bold;
+}
+QPushButton#btnAddSave:hover, QPushButton#btnPrint:hover, QPushButton#btnBatchPrint:hover,
+QPushButton#btnSigSave:hover, QPushButton#btnRetire:hover, QPushButton#btnRestore:hover {
+    background-color: #336cb4;
+}
+QPushButton#btnAddSave:pressed, QPushButton#btnPrint:pressed, QPushButton#btnBatchPrint:pressed,
+QPushButton#btnSigSave:pressed, QPushButton#btnRetire:pressed, QPushButton#btnRestore:pressed {
+    background-color: #24507f;
+}
+QPushButton#btnAddSave:disabled, QPushButton#btnPrint:disabled, QPushButton#btnBatchPrint:disabled,
+QPushButton#btnRetire:disabled, QPushButton#btnRestore:disabled {
+    background-color: #dfe3e8; color: #a9aeb5; border-color: #d3d8de;
+}
+
+/* the two DTR view tabs read as a single segmented control */
+QPushButton#btnViewDaily { border-top-right-radius: 0px; border-bottom-right-radius: 0px; }
+QPushButton#btnViewOpen  { border-top-left-radius: 0px;  border-bottom-left-radius: 0px;
+                           border-left: 0px; }
+QPushButton#btnViewDaily:checked, QPushButton#btnViewOpen:checked {
+    background-color: #2c5f9e; color: #ffffff; border-color: #24507f; font-weight: bold;
+}
+
+/* ------------------------------------------------------------- sidebar ---- */
+QFrame#sidebarFrame { background-color: #20303f; border: 0px; }
+QLabel#lblLogo      { background-color: transparent; }
+
+QFrame#sidebarFrame QPushButton {
+    background-color: transparent;
+    color: #c4cedb;
+    border: 0px;
+    border-left: 3px solid transparent;
+    border-radius: 0px;
+    padding: 9px 16px;
+    text-align: left;
+    min-height: 20px;
+}
+QFrame#sidebarFrame QPushButton:hover   { background-color: #2b3f53; color: #ffffff; }
+QFrame#sidebarFrame QPushButton:pressed { background-color: #24507f; color: #ffffff; }
+QFrame#sidebarFrame QPushButton:checked {
+    background-color: #2c5f9e;
+    color: #ffffff;
+    border-left: 3px solid #7fb2e8;
+    font-weight: bold;
+}
+
+/* ------------------------------------------------- header / info / foot --- */
+QFrame#headerFrame  { background-color: #ffffff; }
+QLabel#lblTitle     { font-size: 17px; font-weight: bold; color: #1b2530; }
+QLabel#lblSession   { color: #6c757d; font-size: 12px; }
+
+QFrame#infoFrame    { background-color: #f4f6f8; }
+QLabel#lblInfoText  { color: #6c757d; font-size: 11px; }
+
+QFrame#devBanner    { background-color: #b31942; }
+QLabel#lblDevBanner { color: #ffffff; font-weight: bold; letter-spacing: 1px; }
+
+QFrame#creditFrame  { background-color: #eceff2; }
+QLabel#lblCredit    { color: #8a9199; font-size: 11px; }
+
+/* --------------------------------------------------------- Line widgets --- */
+/* frameShape 4 = HLine, 5 = VLine */
+QFrame[frameShape="4"] { background-color: #dbe0e6; max-height: 1px; border: 0px; }
+QFrame[frameShape="5"] { background-color: #dbe0e6; max-width: 1px;  border: 0px; }
+QFrame#sidebarDivider  { background-color: #20303f; }
+
+/* ---------------------------------------------------------- group boxes --- */
+/* translucent so the city-seal watermark ghosts through the body area */
+QGroupBox {
+    background-color: rgba(255, 255, 255, 184);   /* 184/255 = 72% */
+    border: 1px solid #dbe0e6;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 14px 12px 12px 12px;
+    font-weight: bold;
+    color: #3d454d;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 10px;
+    padding: 0px 5px;
+    background-color: #fafbfc;
+    color: #3d454d;
+    font-size: 12px;
+}
+
+/* -------------------------------------------------------------- inputs ---- */
+QLineEdit, QSpinBox, QComboBox, QDateEdit, QPlainTextEdit, QTextEdit {
+    background-color: #ffffff;
+    color: #23272b;
+    border: 1px solid #c6ccd4;
+    border-radius: 3px;
+    padding: 4px 8px;
+    min-height: 20px;
+    selection-background-color: #2c5f9e;
+    selection-color: #ffffff;
+}
+QLineEdit:hover, QSpinBox:hover, QComboBox:hover, QDateEdit:hover { border-color: #8dabcb; }
+QLineEdit:focus, QSpinBox:focus, QComboBox:focus, QDateEdit:focus,
+QPlainTextEdit:focus, QTextEdit:focus { border: 1px solid #2c5f9e; }
+QLineEdit:disabled, QSpinBox:disabled, QComboBox:disabled, QDateEdit:disabled {
+    background-color: #f0f1f3; color: #a9aeb5; border-color: #dcdfe4;
+}
+
+/* combo box */
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    width: 22px;
+    border-left: 1px solid #dbe0e6;
+}
+QComboBox::down-arrow          { image: url(:/icons/arrow_down.png);          width: 12px; height: 12px; }
+QComboBox::down-arrow:disabled { image: url(:/icons/arrow_down_disabled.png); }
+QComboBox::down-arrow:on       { image: url(:/icons/arrow_down.png); top: 1px; }
+QComboBox:editable             { background-color: #ffffff; }
+QComboBox QAbstractItemView {
+    background-color: #ffffff;
+    border: 1px solid #c6ccd4;
+    padding: 2px;
+    outline: 0px;
+    selection-background-color: #2c5f9e;
+    selection-color: #ffffff;
+}
+
+/* spin box / date edit steppers */
+QSpinBox::up-button, QDateEdit::up-button {
+    subcontrol-origin: border; subcontrol-position: top right;
+    width: 17px; border-left: 1px solid #dbe0e6; border-bottom: 1px solid #dbe0e6;
+    background-color: #f4f6f8;
+    border-top-right-radius: 3px;
+}
+QSpinBox::down-button, QDateEdit::down-button {
+    subcontrol-origin: border; subcontrol-position: bottom right;
+    width: 17px; border-left: 1px solid #dbe0e6;
+    background-color: #f4f6f8;
+    border-bottom-right-radius: 3px;
+}
+QSpinBox::up-button:hover, QSpinBox::down-button:hover,
+QDateEdit::up-button:hover, QDateEdit::down-button:hover { background-color: #e4eaf1; }
+QSpinBox::up-button:pressed, QSpinBox::down-button:pressed { background-color: #dbe6f3; }
+QSpinBox::up-arrow,   QDateEdit::up-arrow   { image: url(:/icons/spin_up.png);   width: 10px; height: 10px; }
+QSpinBox::down-arrow, QDateEdit::down-arrow { image: url(:/icons/spin_down.png); width: 10px; height: 10px; }
+QSpinBox::up-arrow:disabled,   QSpinBox::down-arrow:disabled,
+QDateEdit::up-arrow:disabled,  QDateEdit::down-arrow:disabled { image: none; }
+
+/* calendar-popup drop-down on QDateEdit */
+QDateEdit::drop-down {
+    subcontrol-origin: padding; subcontrol-position: center right;
+    width: 22px; border-left: 1px solid #dbe0e6;
+    image: url(:/icons/arrow_down.png);
+}
+
+/* ------------------------------------------------- check boxes / radios --- */
+QCheckBox, QRadioButton { spacing: 7px; background-color: transparent; }
+QCheckBox:disabled, QRadioButton:disabled { color: #a3a9b0; }
+
+QCheckBox::indicator { width: 14px; height: 14px; }
+QCheckBox::indicator:unchecked {
+    background-color: #ffffff; border: 1px solid #b4bcc5; border-radius: 2px;
+}
+QCheckBox::indicator:unchecked:hover { border: 1px solid #2c5f9e; }
+QCheckBox::indicator:checked          { image: url(:/icons/check.png); }
+QCheckBox::indicator:checked:disabled { image: url(:/icons/check_disabled.png); }
+QCheckBox::indicator:unchecked:disabled {
+    background-color: #f0f1f3; border: 1px solid #dcdfe4; border-radius: 2px;
+}
+
+QRadioButton::indicator { width: 14px; height: 14px; }
+QRadioButton::indicator:unchecked          { image: url(:/icons/radio_off.png); }
+QRadioButton::indicator:checked            { image: url(:/icons/radio_on.png); }
+QRadioButton::indicator:disabled           { image: url(:/icons/radio_disabled.png); }
+
+/* --------------------------------------------------- lists and tables ----- */
+QListWidget, QListView, QTableWidget, QTableView, QTreeView {
+    background-color: rgba(255, 255, 255, 184);
+    alternate-background-color: rgba(247, 249, 251, 184);
+    border: 1px solid #dbe0e6;
+    border-radius: 3px;
+    color: #23272b;
+    gridline-color: #eef1f4;
+    outline: 0px;
+}
+QListWidget::item, QTableWidget::item, QTableView::item { padding: 5px 8px; }
+QListWidget::item:hover { background-color: #eef3f9; }
+QListWidget::item:selected, QTableWidget::item:selected, QTableView::item:selected {
+    background-color: #2c5f9e; color: #ffffff;
+}
+
+QHeaderView { background-color: transparent; border: 0px; }
+QHeaderView::section {
+    background-color: rgba(238, 241, 244, 184);
+    color: #4a525a;
+    border: 0px;
+    border-right: 1px solid #dbe0e6;
+    border-bottom: 1px solid #d2d8df;
+    padding: 6px 8px;
+    font-weight: bold;
+    font-size: 12px;
+}
+QHeaderView::section:hover { background-color: #e4eaf1; }
+QTableCornerButton::section { background-color: #eef1f4; border: 0px; border-bottom: 1px solid #d2d8df; }
+
+/* floating search suggestions */
+QListWidget#listResults {
+    background-color: #ffffff;
+    border: 1px solid #c6ccd4;
+    border-radius: 3px;
+}
+
+/* ------------------------------------------------ stack / scroll areas ---- */
+QStackedWidget > QWidget { background-color: transparent; }
+QScrollArea, QScrollArea > QWidget > QWidget { background-color: transparent; border: 0px; }
+
+QScrollBar:vertical   { background: #f0f2f5; width: 12px; margin: 0px; border: 0px; }
+QScrollBar::handle:vertical { background: #c2cad3; border-radius: 6px; min-height: 30px; }
+QScrollBar::handle:vertical:hover   { background: #9aa7b5; }
+QScrollBar::handle:vertical:pressed { background: #7d8b99; }
+QScrollBar:horizontal { background: #f0f2f5; height: 12px; margin: 0px; border: 0px; }
+QScrollBar::handle:horizontal { background: #c2cad3; border-radius: 6px; min-width: 30px; }
+QScrollBar::handle:horizontal:hover { background: #9aa7b5; }
+QScrollBar::add-line, QScrollBar::sub-line { width: 0px; height: 0px; border: 0px; background: none; }
+QScrollBar::add-page, QScrollBar::sub-page { background: none; }
+
+/* --------------------------------------------------------- progress bar --- */
+QProgressBar {
+    background-color: #eef1f4;
+    border: 1px solid #dbe0e6;
+    border-radius: 3px;
+    text-align: center;
+    color: #4a525a;
+    min-height: 18px;
+}
+QProgressBar::chunk { background-color: #2c5f9e; border-radius: 2px; }
+
+/* ------------------------------------------------------- dialog buttons --- */
+QDialogButtonBox QPushButton { min-width: 84px; min-height: 26px; }
+QDialogButtonBox QPushButton:default {
+    background-color: #2c5f9e; color: #ffffff; border: 1px solid #24507f; font-weight: bold;
+}
+QDialogButtonBox QPushButton:default:hover { background-color: #336cb4; }
+
+/* --------------------------------------------------- named label styles --- */
+QLabel#lblPhoto, QLabel#lblAPhotoPreview, QLabel#lblPhotoPreview {
+    background-color: #f7f9fb; border: 1px solid #c6ccd4; border-radius: 3px; color: #9aa1a9;
+}
+QLabel#lblWatermark  { background-color: transparent; }   /* seal: opacity set in code */
+QLabel#lblEmptyState { color: #8a9199; font-size: 14px; }
+QLabel#lblError, QLabel#lblAddError { color: #b31942; }
+
+QLabel#lblSigHelp, QLabel#lblDatabaseHelp, QLabel#lblArchiveHelp,
+QLabel#lblReportEditorHelp, QLabel#lblDevWarn, QLabel#lblHelp,
+QLabel#lblRetireInfo, QLabel#lblLogsInfo, QLabel#lblIntro, QLabel#lblSummary {
+    color: #6c757d;
+}
+QLabel#lblArchiveInfo, QLabel#lblDatabaseState, QLabel#lblArchiveState,
+QLabel#lblAPhotoInfo, QLabel#lblPhotoInfo, QLabel#lblAIdHint, QLabel#lblIdWarn,
+QLabel#lblRosterCount, QLabel#lblStatus, QLabel#lblScanStatus, QLabel#lblHint,
+QLabel#lblSigDeptState, QLabel#lblAWorkModeInfo, QLabel#lblWorkModeInfo,
+QLabel#lblConsoleState, QLabel#lblDetail, QLabel#lblCurrent, QLabel#lblDrive {
+    color: #8a9199; font-size: 11px;
+}
+QLabel#lblWho { font-size: 15px; font-weight: bold; color: #1b2530; }
+
+/* ============================================================================
+   THIS PROJECT'S OWN OVERRIDES
+   ============================================================================
+
+   Everything above this line is the "Clean Enterprise" sheet exactly as it was
+   supplied -- a general-purpose Qt theme that knows nothing about this program.
+   Everything BELOW is the handful of rules this program needs on top of it,
+   for widgets the supplied sheet has no opinion about. Without them, those
+   widgets quietly fall back to the plain grey QPushButton / QLineEdit look.
+
+   KEEPING THE TWO APART IS THE POINT. The supplied block is treated as
+   read-only: when a newer version of the pack arrives, it is pasted over the
+   top and this section survives untouched. Edit a rule up there instead and
+   that edit is gone the first time the theme is refreshed, with nothing to
+   say it ever existed.
+
+   These rules sit at the bottom on purpose. In QSS, when two rules have the
+   same specificity, the LAST one wins -- so anything here overrides the block
+   above. Deleting this whole section returns you to the supplied theme with
+   nothing else disturbed.
+
+   Colours here are the Baybay City brand pair:
+       #186ea1 navy   #b31942 Old Glory Red
+   The theme above uses #2c5f9e as its accent instead. That difference is a
+   deliberate choice, not a bug: the brand pair is used where the CITY is
+   being asserted, the theme accent everywhere else.
+   ---------------------------------------------------------------------- */
+
+/* --- destructive actions read as red, not as ordinary primary buttons ---
+   The supplied sheet styles btnRetire and btnRestore as blue primaries and
+   leaves btnDelete unstyled entirely. All three are grouped as danger here
+   instead: retiring an employee, deleting a record and rolling back to a
+   restore point are all high-consequence and should not look like Print or
+   Save. This pairs with the confirmation friction already built into
+   the retire flow. To go back to the theme's blue treatment, delete this
+   block -- do not edit the block above. */
+#btnDelete, #btnRetire, #btnRestore {
+    background-color: #b31942;
+    border: 1px solid #b31942;
+    color: #ffffff;
+    font-weight: bold;
+}
+#btnDelete:hover, #btnRetire:hover, #btnRestore:hover {
+    background-color: #cc1f4d; border-color: #cc1f4d; color: #ffffff;
+}
+#btnDelete:pressed, #btnRetire:pressed, #btnRestore:pressed {
+    background-color: #8f1435; border-color: #8f1435; color: #ffffff;
+}
+#btnDelete:focus, #btnRetire:focus, #btnRestore:focus {
+    border: 2px solid #8f1435;
+    padding: 4px 13px;   /* 1px less than normal, so the fatter border does not
+                            grow the button and shift the row it sits in */
+}
+#btnDelete:disabled, #btnRetire:disabled, #btnRestore:disabled {
+    background-color: #dfe3e8; border-color: #d3d8de; color: #a9aeb5;
+}
+
+/* --- three more primary buttons the new sheet did not list ---
+   btnScan, btnCreateNow and btnArchiveNow are the "commit the action" button
+   on the drive-select, restore-point and archive screens. They were primaries
+   before; matched here to the theme's own primary colours (#2c5f9e family)
+   rather than the old navy, so they sit with btnPrint and btnAddSave. */
+#btnScan, #btnCreateNow, #btnArchiveNow {
+    background-color: #2c5f9e;
+    color: #ffffff;
+    border: 1px solid #24507f;
+    font-weight: bold;
+}
+#btnScan:hover, #btnCreateNow:hover, #btnArchiveNow:hover {
+    background-color: #336cb4;
+}
+#btnScan:pressed, #btnCreateNow:pressed, #btnArchiveNow:pressed {
+    background-color: #24507f;
+}
+#btnScan:disabled, #btnCreateNow:disabled, #btnArchiveNow:disabled {
+    background-color: #dfe3e8; color: #a9aeb5; border-color: #d3d8de;
+}
+
+/* --- the log console stays monospace ---
+   txtLog shows import output line by line. A proportional font makes the
+   columns wander; a fixed-pitch font keeps them lined up. Consolas ships with
+   Windows, DejaVu Sans Mono with most Linux boxes, and "monospace" is the
+   last-resort fallback if neither is installed. */
+#txtLog {
+    font-family: "Consolas", "DejaVu Sans Mono", monospace;
+    font-size: 12px;
+    background-color: #f7fafc;
+    color: #16303f;
+}
+
+/* --- the roster search box keeps its pill shape ---
+   Rounded far enough to read as a search field rather than a plain text box.
+   The radius has to be about half the height or the corners look chewed. */
+#txtSearch {
+    border: 1px solid #c6ccd4;
+    border-radius: 16px;
+    padding: 5px 14px;
+    background-color: #ffffff;
+}
+#txtSearch:hover { border-color: #8dabcb; }
+#txtSearch:focus {
+    border: 2px solid #2c5f9e;
+    padding: 4px 13px;   /* same 1px trim as above, for the same reason */
+    background-color: #ffffff;
+}
+
+/* --- close the same trap on the ordinary item views ---
+   The tables and lists paint through the delegate, so ::item:selected already
+   gives them the right colour and nothing looks wrong today. But the palette
+   behind them still has no highlight brush, for exactly the reason described
+   in the calendar block above, so anything that ever paints from the palette
+   instead of the delegate would come out black again -- a QTableView with a
+   custom paint routine, a QTreeView drawing its own branch highlight, a
+   third-party view dropped in later.
+
+   The values are the same ones ::item:selected already uses, so this changes
+   nothing you can see. It just stops the fallback being black. */
+QListWidget, QListView, QTableWidget, QTableView, QTreeView {
+    selection-background-color: #2c5f9e;
+    selection-color: #ffffff;
+}
+
+/* ============================================================================
+   CALENDAR POPUP on the QDateEdit fields
+   ============================================================================
+   Used by dateABirth, dateOverrideRelease, dateBirth (Edit Employee) and
+   dateRetired (Retire Employee), all of which have calendarPopup set.
+
+   WHY THE SELECTED DATE CAME OUT BLACK
+   ------------------------------------
+   This one is worth understanding, because nothing in the sheet ever asked
+   for black.
+
+   Almost every item view in Qt draws its rows through the item delegate, and
+   the delegate honours the ::item:selected pseudo-element. That is how the
+   theme colours selections further up:
+
+       QTableView::item:selected { background-color: #2c5f9e; }
+
+   QCalendarWidget is the exception. Its date grid is a QTableView, but the
+   cells are painted by QCalendarWidget::paintCell(), which bypasses the
+   delegate entirely and fills the selected cell from the view's PALETTE,
+   using QPalette::Highlight.
+
+   So the generic rule above matched the calendar's internal view -- it is a
+   QTableView, after all -- and QStyleSheetStyle rebuilt that view's palette
+   from the rule. But the rule never sets selection-background-color, because
+   it does selection through ::item:selected instead. An unset colour resolves
+   to a default-constructed QColor, and a default-constructed QColor is BLACK.
+   paintCell() then dutifully filled the selected day with it.
+
+   The cure is to state the selection colours outright on the calendar's view.
+   selection-background-color is the property paintCell() actually reads.
+
+   Anything that fixes a black selection somewhere else in Qt will be this
+   same shape: a widget that paints from the palette rather than through the
+   delegate, sitting under a rule that only ever set ::item:selected.
+   ------------------------------------------------------------------------ */
+
+/* --- two-digit dates were showing as "..." ---
+   The theme sets, for every item view in the program:
+
+       QTableView::item { padding: 5px 8px; }
+
+   which is right for the report tables and wrong for a calendar. The
+   calendar's internal view IS a QTableView, so it picked that up: 8px of
+   padding on each side of a cell barely 25px wide leaves about 9px of text
+   room. One digit fits, two do not, and the delegate elides the overflow to
+   an ellipsis. That is why 1-9 rendered fine and 10-31 came out as "...".
+
+   Worth knowing WHY the delegate is involved at all, since the block above
+   says paintCell() bypasses it. It bypasses it for the fill colour only:
+   QCalendarDelegate::paint() stores the style option, calls paintCell(), and
+   the default paintCell() hands straight back to QItemDelegate::paint() with
+   that stored option. So the QSS padding does reach the text rect, and
+   QItemDelegate is what elides. Selection colour comes from the palette,
+   text layout comes from the stylesheet. Both had to be fixed, separately.
+
+   2px keeps the numbers off the cell edges without eating the width. */
+QCalendarWidget QAbstractItemView::item {
+    padding: 2px;
+}
+
+/* --- the popup was opening cramped ---
+   A QDateEdit calendar popup sizes itself to the calendar's minimum, which is
+   tight enough that the day columns squeeze and the month/year strip crowds.
+   A floor gives the grid room to breathe. Only the popups are affected;
+   there are no inline calendars in this program. */
+QCalendarWidget {
+    min-width: 300px;
+    min-height: 240px;
+}
+
+/* The date grid. :enabled and :disabled are separated because the greyed
+   trailing days from the neighbouring months come through as disabled, and
+   left alone they inherit the enabled foreground and stop reading as
+   out-of-month. */
+QCalendarWidget QAbstractItemView:enabled {
+    background-color: #ffffff;
+    color: #23272b;
+    selection-background-color: #2c5f9e;   /* THIS is the black-selection fix */
+    selection-color: #ffffff;
+    outline: 0px;
+}
+QCalendarWidget QAbstractItemView:disabled {
+    background-color: #ffffff;
+    color: #b4bcc5;
+}
+
+/* The weekday header strip and the week-number column, both of which Qt
+   paints from alternate-background-color rather than from a selector of
+   their own. */
+QCalendarWidget QWidget {
+    alternate-background-color: #eef1f4;
+}
+
+/* The month/year strip across the top. Accent blue rather than the darker
+   chrome the sidebar uses: on a panel this small #20303f reads as a solid
+   black bar, and it matches the selected day this way. */
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: #2c5f9e;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+/* The prev/next arrows and the month button inside that strip. */
+QCalendarWidget QToolButton {
+    background-color: transparent;
+    color: #ffffff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 4px 8px;
+    font-weight: bold;
+}
+QCalendarWidget QToolButton:hover   { background-color: #336cb4; }
+QCalendarWidget QToolButton:pressed { background-color: #24507f; }
+/* The month button opens a dropdown, so it needs an indicator. The default
+   glyph is the dark arrow_down, which all but disappears on the blue strip.
+   arrow_down_white is the same artwork in white and was shipped with the
+   style pack for exactly this situation -- until now nothing referenced it.
+   The extra right padding above keeps the text clear of it. */
+QCalendarWidget QToolButton::menu-indicator {
+    image: url(:/icons/arrow_down_white.png);
+    width: 12px;
+    height: 12px;
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+}
+
+/* The month dropdown hanging off the month button. */
+QCalendarWidget QMenu {
+    background-color: #ffffff;
+    border: 1px solid #c6ccd4;
+    padding: 2px;
+}
+QCalendarWidget QMenu::item { padding: 4px 20px; }
+QCalendarWidget QMenu::item:selected { background-color: #2c5f9e; color: #ffffff; }
+
+/* The year editor, also inside the blue strip. Kept as a normal pale input
+   rather than tinted to match the header, and that is deliberate: the stepper
+   arrows are the dark spin_up / spin_down images, and there are no white
+   versions of those in the icon set. A dark-on-blue arrow would be close to
+   invisible, so the field keeps a light background the existing arrows read
+   against. It looks like an input sitting in the header, which is what it is. */
+QCalendarWidget QSpinBox {
+    background-color: #ffffff;
+    color: #23272b;
+    border: 1px solid #24507f;
+    border-radius: 3px;
+    padding: 2px 4px;
+    margin: 2px;
+    selection-background-color: #2c5f9e;
+    selection-color: #ffffff;
+}
+
+/* --- page and scroll-area backgrounds ---
+   These have to be TRANSPARENT, not grey, or they cover the watermark.
+
+   The theme opens with a blanket `QWidget { background-color: #f4f6f8; }`.
+   In QSS a plain type selector matches the class AND every subclass, so that
+   one rule quietly gives an opaque fill to almost every widget in the program
+   -- QStackedWidget and QScrollArea included. The watermark label sits behind
+   stackPages as a sibling, so an opaque stackPages paints straight over it and
+   the seal is never seen. Same story for the settings scroll area.
+
+   mainFrame is the exception and stays opaque on purpose: it is the surface
+   the seal is drawn ON. It is the parent, so it paints first, then the
+   watermark, then everything else on top. */
+#mainFrame {
+    background-color: #f4f6f8;
+    border: 0px;
+}
+#scrollSettings, #scrollSettingsContents,
+#scrollAdd, #scrollAddContents {
+    background-color: transparent;
+    border: 0px;
+}
+
+/* The VIEWPORT between them, which is easy to miss. A QScrollArea is really
+   three widgets: the frame, a viewport clipping window, and the content. The
+   theme's own rule reaches the frame and the content but not the viewport in
+   the middle, so the universal QWidget fill still applied there and left an
+   opaque panel right over the seal on the Settings page.
+
+   Targeted by Qt's internal object name rather than by `#scrollSettings >
+   QWidget`, because that broader selector would also catch the scroll BARS,
+   and an id-based selector outranks the QScrollBar rules above it -- the bars
+   would go transparent and vanish. Naming the viewport hits one widget only.
+
+   The `QScrollArea` type here does not match the tables: QTableWidget derives
+   from QAbstractScrollArea, not QScrollArea, so its viewport keeps the
+   translucent rgba fill the theme gives it. */
+QScrollArea > QWidget#qt_scrollarea_viewport {
+    background-color: transparent;
+}
+
+/* A bare layout container on the Settings page, with no look of its own. Left
+   opaque it prints a grey rectangle across the developer group and blocks the
+   seal behind it. */
+#devOptions {
+    background-color: transparent;
+}
+
+/* Every stacked widget, not just the page host. stackDtrView (the daily /
+   open-time switch inside the report group) is one too, and it would punch
+   the same opaque hole through the group box above the seal. */
+QStackedWidget {
+    background-color: transparent;
+}
+
+/* --- the hairline under the header ---
+   A "Line" widget, so the frameShape rule above already gives it a colour.
+   Darkened here to match the chrome instead of the general divider grey. */
+#headerLine {
+    background-color: #20303f;
+    border: 0px;
+    max-height: 1px;
+}
+
+/* --- the three main-window tables let the seal through ---
+   This is what was killing the watermark on the Batch Report page.
+
+   Translucency does not add, it MULTIPLIES. The theme gives QGroupBox and the
+   tables each an alpha of 184, which is 72% opaque, so each layer passes 28%
+   of what is behind it. A table inside a group box is two layers: 0.28 x 0.28
+   = about 8% gets through, and at the watermark's own opacity that is well
+   under 1%. Invisible.
+
+   Every other page has bare page area around its group boxes where only one
+   layer sits over the seal. pageBatch does not: one group box fills the whole
+   page and one table fills most of the group box, so the seal was under two
+   layers everywhere and showed up nowhere.
+
+   Dropping these three tables to fully transparent leaves exactly one
+   translucent layer -- the group box they sit in -- which is the same amount
+   the rest of the app shows through. The group box still supplies the white,
+   so the tables look no different against it.
+
+   Named individually rather than styling QTableView broadly on purpose: the
+   tables in the dialogs (archives, restore points, import) have no watermark
+   and no group box behind them, so a transparent table there would sit
+   straight on the dialog's grey and lose its panel. They keep the theme's
+   rgba fill. */
+#tblReport, #tblOpenTime, #tblBatch {
+    background-color: transparent;
+    alternate-background-color: rgba(247, 249, 251, 110);
+}
+
+/* --- the +/- zoom buttons in the print preview ---
+   These are narrow, fixed-width, single-glyph buttons created in
+   cscform48.cpp. The theme's default QPushButton padding is 14px each side,
+   which against a 32px fixed width leaves 2px for the glyph, so the "+" and
+   "-" were clipped to nothing and both buttons rendered as blank white
+   squares. Zeroing the horizontal padding gives the label the whole button.
+
+   The bigger, bolder glyph is because a bare "+" at body size looks like a
+   speck in a square this small. text-align is stated outright rather than
+   relied on: with zero padding a QPushButton label centres anyway, but saying
+   so keeps it from drifting if the padding is ever changed back. */
+QPushButton#btnZoomIn, QPushButton#btnZoomOut {
+    padding: 0px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #23272b;
+}
+
+/* --- the watermark label itself ---
+   The theme already declares QLabel#lblWatermark transparent further up. It
+   is restated here only to keep the whole watermark story in one place, and
+   to pin the note about where the widget comes from: there is no lblWatermark
+   in any .ui file. It is created in MainWindow's constructor, parented to
+   mainFrame, and lower()ed to the bottom of the sibling z-order. See
+   setupWatermark() in mainwindow.cpp.
+
+   The opacity is NOT set here. QSS has no opacity property that works on a
+   QLabel pixmap, so the ghosting is baked into the pixmap with QPainter
+   before it is handed to the label. */
+QLabel#lblWatermark {
+    background-color: transparent;
+    border: 0px;
+}

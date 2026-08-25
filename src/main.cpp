@@ -8,5 +8,5 @@ int main(int argc, char* argv[]) {
   MainWindow window;
   window.show();
 
-  return QApplication::exec(); // this will run the event loop and returns when the app closes
+  return app.exec(); // this will run the event loop and returns when the app closes
 }
